@@ -13,7 +13,7 @@ try {
 module.exports = {
     entry: [
         'script!jquery/dist/jquery.min.js',
-        'bootstrap-loader',
+        "bootstrap-webpack!bootstrap-webpack/bootstrap.config.js",
         './app/app.jsx'
     ],
     externals: {
