@@ -5,7 +5,7 @@ import * as actions from 'actions';
 var {Link} = require("react-router");
 import ContentBodyHeader from 'common/ContentBodyHeader';
 
-export var CorporateAdd = React.createClass({
+export var AdminAdd = React.createClass({
     render() {
         return (
             <div>
@@ -60,4 +60,4 @@ export var CorporateAdd = React.createClass({
     }
 });
 
-export default Redux.connect()(CorporateAdd);
+export default Redux.connect()(AdminAdd);

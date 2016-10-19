@@ -5,11 +5,11 @@ import * as actions from 'actions';
 var {Link} = require("react-router");
 import ContentBodyHeader from 'common/ContentBodyHeader';
 
-export var CorporateList = React.createClass({
+export var AdminList = React.createClass({
     render() {
         return (
             <div>
-              <ContentBodyHeader path={this.props.route.path}/>
+                <ContentBodyHeader path={this.props.route.path}/>
                 <div className="col-lg-8">
                     <div className="panel panel-default">
                         <div className="panel-heading">
@@ -149,4 +149,4 @@ export var CorporateList = React.createClass({
     }
 });
 
-export default Redux.connect()(CorporateList);
+export default Redux.connect()(AdminList);

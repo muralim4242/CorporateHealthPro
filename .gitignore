@@ -1,3 +1,6 @@
 node_modules/
 public/bundle.js
 config/
+temp.js
+tempFile.jsx
+playground/

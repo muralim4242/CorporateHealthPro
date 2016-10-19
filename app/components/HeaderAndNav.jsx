@@ -32,16 +32,6 @@ export var HeaderAndNav = React.createClass({
                                         <i className="glyphicon glyphicon-user"></i>
                                         Profile</a>
                                 </li>
-                                <li>
-                                    <a href="#">
-                                        <i className="glyphicon glyphicon-envelope"></i>
-                                        Inbox</a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i className="glyphicon glyphicon-cog"></i>
-                                        Settings</a>
-                                </li>
                                 <li className="divider"></li>
                                 <li>
                                     <a href="#">
@@ -61,16 +51,22 @@ export var HeaderAndNav = React.createClass({
 
                             </li>
                             <li>
-                                <Link to='/Admin/CorporateList' activeClassName="active">
+                                <Link to='/Admin/Corporate/List' activeClassName="active">
                                     <i className="glyphicon glyphicon-user"></i>Corporate</Link>
                             </li>
                             <li>
-                                <a href="index.html">
-                                    <i className="glyphicon glyphicon-user"></i>Users</a>
+                                <Link to='/Admin/Users/UserCheck' activeClassName="active">
+                                    <i className="glyphicon glyphicon-user"></i>User</Link>
+                            </li>
+
+                            <li>
+                                <Link to='/Admin/Camps/List' activeClassName="active">
+                                    <i className="glyphicon glyphicon-user"></i>Camp</Link>
+
                             </li>
                             <li>
-                                <a href="index.html">
-                                    <i className="glyphicon glyphicon-user"></i>Reports</a>
+                                <Link to='/Admin/Reports' activeClassName="active">
+                                    <i className="glyphicon glyphicon-user"></i>Report</Link>
                             </li>
                         </ul>
                     </div>

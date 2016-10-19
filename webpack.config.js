@@ -72,7 +72,7 @@ module.exports = {
             // the url-loader uses DataUrls.
             // the file-loader emits files.
             {
-                test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
+                test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)|\.png($|\?)|\.jpg($|\?)/,
                 loader: 'url-loader'
             }
         ]
