@@ -28,6 +28,8 @@ import CampAdd from 'admin/camp/CampAdd';
 import CampView from 'admin/camp/CampView';
 import SelectCompany from 'admin/camp/SelectCompany';
 
+import Profile from "admin/Profile";
+
 
 
 //import firebase from 'app/firebase/';
@@ -71,11 +73,12 @@ export default(
                 </Route>
                 <Route path="/Admin/Camp" component={Camps}>
                     <Route path="/Admin/Camp/SelectCompany" component={SelectCompany}/>
-                    <Route path="/Admin/Camp/List" component={CampList}/>
-                    <Route path="/Admin/Camp/Add" component={CampAdd}/>
-                    <Route path="/Admin/Camp/Edit/:id" component={CampAdd}/>
-                    <Route path="/Admin/Camp/View/:id" component={CampView}/>
+                    <Route path="/Admin/Camp/:corId/List" component={CampList}/>
+                    <Route path="/Admin/Camp/:corId/Add" component={CampAdd}/>
+                    <Route path="/Admin/Camp/:corId/Edit/:id" component={CampAdd}/>
+                    <Route path="/Admin/Camp/:corId/View/:id" component={CampView}/>
                 </Route>
+                <Route path="/Admin/Profile" component={Profile}/>
                 <IndexRoute component={Dashboard}/>
             </Route>
             <IndexRoute component={Login}/>

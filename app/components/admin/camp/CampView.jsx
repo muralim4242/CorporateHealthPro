@@ -9,7 +9,7 @@ export var CampView = React.createClass({
     render() {
         return (
             <div>
-              <ContentBodyHeader path={this.props.route.path}/>
+                <ContentBodyHeader path={this.props.route.path}/>
                 <div className="col-lg-8">
                     <div className="panel panel-default">
                         <div className="panel-heading">
@@ -17,53 +17,31 @@ export var CampView = React.createClass({
                         </div>
                         <div className="panel-body">
                             <div className="row">
-                                <div className="col-lg-4">
-                                    <div className="row">
-                                        <div className="col-lg-8">
-                                            <div className="thumbnail text-center">
-                                                <label >Corpaorate Name</label>
-                                                <img src={require('app/images/murali.jpg')} className="img-circle image_universal"></img>
-                                                <span >hhhh</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="row">
-                                        <div className="col-lg-8">
-                                            <div className="thumbnail text-center">
-                                                <label>MD/HR Name</label>
-                                                <img src={require('app/images/murali.jpg')} className="img-circle image_universal"></img>
-                                                <span>hhhh</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div className="col-lg-8">
-                                    <br/>
-                                    <br/>
                                     <div className="row">
-                                        <div className="col-lg-2">
-                                            <label>Email</label>
+                                        <div className="col-lg-3">
+                                            <label>Name</label>
                                         </div>
                                         <div className="col-lg-6">
-                                            <span>tharu@gmail.com</span>
+                                            <span>Oct camp</span>
                                         </div>
                                     </div>
                                     <br/>
                                     <div className="row">
-                                        <div className="col-lg-2">
-                                            <label>Address</label>
+                                        <div className="col-lg-3">
+                                            <label>Start Date</label>
                                         </div>
                                         <div className="col-lg-6">
-                                            <span>nbcfwe hbwehf uediuw</span>
+                                            <span>12-10-2016</span>
                                         </div>
                                     </div>
                                     <br/>
                                     <div className="row">
-                                        <div className="col-lg-2">
-                                            <label>MD/HR Say</label>
+                                        <div className="col-lg-3">
+                                            <label>Start Date</label>
                                         </div>
                                         <div className="col-lg-6">
-                                            <span>jnf jef iuty wi</span>
+                                            <span>25-10-2016</span>
                                         </div>
                                     </div>
                                 </div>
@@ -72,18 +50,15 @@ export var CampView = React.createClass({
                         <div className="panel-footer">
                             <div className="row">
                                 <div className="col-lg-2 ">
-
-                                  <Link to='/Admin/Corporate/List' className="btn btn-primary pull-left">
-                                    Back</Link>
-
+                                    <Link to='/Admin/Camp/1/List' className="btn btn-primary pull-left">
+                                        Back</Link>
                                 </div>
                                 <div className="col-lg-4 col-lg-offset-6">
                                     <div className="pull-right">
-                                      <Link to='/Admin/Corporate/Edit/1' className="btn btn-success">
-                                        Edit</Link>
+                                        <Link to='/Admin/Camp/1/Edit/1' className="btn btn-success">
+                                            Edit</Link>
                                         <button type="button" className="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
                                     </div>
-
                                 </div>
                             </div>
                         </div>

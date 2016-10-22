@@ -14,7 +14,7 @@ export var ContentBodyHeader = React.createClass({
                       <ol className="breadcrumb">
                           <li className="active">
                               <i className="glyphicon glyphicon-user"></i>
-                              {" "+pathSplit[2] +"/ "+pathSplit[3]+"/ "}
+                              {" "+pathSplit[2] +" / "+((pathSplit[3])?pathSplit[3]+" / ":"") +((pathSplit[4])?pathSplit[4]+" / ":"")+((pathSplit[5])?pathSplit[5]+" / ":"")+((pathSplit[6])?pathSplit[6]+" / ":"")}
                           </li>
                       </ol>
                   </div>

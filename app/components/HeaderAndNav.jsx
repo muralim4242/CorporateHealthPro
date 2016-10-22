@@ -1,11 +1,16 @@
 import React from 'react';
-var {Link, IndexLink} = require("react-router");
+var {Link, IndexLink,hashHistory} = require("react-router");
 
 import * as Redux from 'react-redux';
 
 import * as actions from 'actions';
 
 export var HeaderAndNav = React.createClass({
+    onLogoutHandler:(e)=>
+    {
+        hashHistory.push('/');
+    }
+    ,
     render() {
         return (
             <div>
@@ -17,26 +22,26 @@ export var HeaderAndNav = React.createClass({
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
                         </button>
-                        <a className="navbar-brand" href="index.html">Logo</a>
+                        <a className="navbar-brand" href="index.html">Corporate Health Pro</a>
                     </div>
                     <ul className="nav navbar-right top-nav">
                         <li className="dropdown">
                             <a href="#" className="dropdown-toggle" data-toggle="dropdown">
                                 <i className="glyphicon glyphicon-user"></i>
-                                John Smith
+                              {" "}  Murali M
                                 <b className="caret"></b>
                             </a>
                             <ul className="dropdown-menu">
                                 <li>
-                                    <a href="#">
-                                        <i className="glyphicon glyphicon-user"></i>
-                                        Profile</a>
+                                    <Link to="/Admin/Profile">
+                                        <i className="glyphicon glyphicon-eye-open"></i>
+                                    {" "}    Profile</Link>
                                 </li>
                                 <li className="divider"></li>
                                 <li>
-                                    <a href="#">
-                                        <i className="fa fa-fw fa-power-off"></i>
-                                        Log Out</a>
+                                    <a  onClick={this.onLogoutHandler}>
+                                        <i  className="glyphicon glyphicon-log-out"></i>
+                                      {" "}  Log Out</a>
                                 </li>
                             </ul>
                         </li>
@@ -46,27 +51,27 @@ export var HeaderAndNav = React.createClass({
                         <ul className="nav navbar-nav side-nav">
                             <li>
                                 <IndexLink to="/Admin" activeClassName="active">
-                                    <i className="glyphicon glyphicon-user"></i>
-                                    Dashboard</IndexLink>
+                                    <i className="glyphicon glyphicon-dashboard"></i>
+                                  {" "}  Dashboard</IndexLink>
 
                             </li>
                             <li>
                                 <Link to='/Admin/Corporate/List' activeClassName="active">
-                                    <i className="glyphicon glyphicon-user"></i>Corporate</Link>
+                                    <i className="glyphicon glyphicon-briefcase"></i> {" "}Corporate</Link>
                             </li>
                             <li>
                                 <Link to='/Admin/Users/UserCheck' activeClassName="active">
-                                    <i className="glyphicon glyphicon-user"></i>User</Link>
+                                    <i className="glyphicon glyphicon-user"></i> {" "}User</Link>
                             </li>
 
                             <li>
                                 <Link to='/Admin/Camp/SelectCompany' activeClassName="active">
-                                    <i className="glyphicon glyphicon-user"></i>Camp</Link>
+                                    <i className="glyphicon glyphicon-th-large"></i>{" "}Camp</Link>
 
                             </li>
                             <li>
                                 <Link to='/Admin/Reports' activeClassName="active">
-                                    <i className="glyphicon glyphicon-user"></i>Report</Link>
+                                    <i className="glyphicon glyphicon-list-alt"></i>{" "}Report</Link>
                             </li>
                         </ul>
                     </div>
