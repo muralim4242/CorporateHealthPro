@@ -13,7 +13,7 @@ export var UserCheck = React.createClass({
         hashHistory.push('/Admin/Users/Admin/List');
     }
     else {
-        hashHistory.push('/Admin/Users/Coporate/List');
+        hashHistory.push('/Admin/Users/Corporate/CorporateListForUsersAdd');
     }
   },
     render() {

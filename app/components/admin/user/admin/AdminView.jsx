@@ -21,18 +21,9 @@ export var AdminView = React.createClass({
                                     <div className="row">
                                         <div className="col-lg-8">
                                             <div className="thumbnail text-center">
-                                                <label >Corpaorate Name</label>
+                                                <label >Full Name</label>
                                                 <img src={require('app/images/murali.jpg')} className="img-circle image_universal"></img>
                                                 <span >hhhh</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="row">
-                                        <div className="col-lg-8">
-                                            <div className="thumbnail text-center">
-                                                <label>MD/HR Name</label>
-                                                <img src={require('app/images/murali.jpg')} className="img-circle image_universal"></img>
-                                                <span>hhhh</span>
                                             </div>
                                         </div>
                                     </div>
@@ -41,29 +32,78 @@ export var AdminView = React.createClass({
                                     <br/>
                                     <br/>
                                     <div className="row">
-                                        <div className="col-lg-2">
-                                            <label>Email</label>
+                                        <div className="col-lg-4">
+                                            <label>Gender</label>
                                         </div>
                                         <div className="col-lg-6">
-                                            <span>tharu@gmail.com</span>
+                                            <span>Male</span>
                                         </div>
                                     </div>
                                     <br/>
                                     <div className="row">
-                                        <div className="col-lg-2">
+                                        <div className="col-lg-4">
+                                            <label>Role</label>
+                                        </div>
+                                        <div className="col-lg-6">
+                                            <span>Admin</span>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <div className="row">
+                                        <div className="col-lg-4">
+                                            <label>DOB</label>
+                                        </div>
+                                        <div className="col-lg-6">
+                                            <span>02-07-1989</span>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-lg-4">
+                                            <label>Email Address</label>
+                                        </div>
+                                        <div className="col-lg-6">
+                                            <span>muralim4242@gmail.com</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="row">
+                                        <div className="col-lg-4">
+                                            <label>Mobil</label>
+                                        </div>
+                                        <div className="col-lg-6">
+                                            <span>7795929033</span>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-lg-4">
                                             <label>Address</label>
                                         </div>
                                         <div className="col-lg-6">
-                                            <span>nbcfwe hbwehf uediuw</span>
+                                            <span>#84,1st floor,shaheen taj building, kote bheedi,4th street, varthur, bangalore- 560087</span>
                                         </div>
                                     </div>
-                                    <br/>
                                     <div className="row">
-                                        <div className="col-lg-2">
-                                            <label>MD/HR Say</label>
+                                        <div className="col-lg-4">
+                                            <label>Pincode</label>
                                         </div>
                                         <div className="col-lg-6">
-                                            <span>jnf jef iuty wi</span>
+                                            <span>560087</span>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-lg-4">
+                                            <label>Blood group</label>
+                                        </div>
+                                        <div className="col-lg-6">
+                                            <span>A+</span>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-lg-4">
+                                            <label>Designation</label>
+                                        </div>
+                                        <div className="col-lg-6">
+                                            <span>Admin</span>
                                         </div>
                                     </div>
                                 </div>
@@ -73,13 +113,13 @@ export var AdminView = React.createClass({
                             <div className="row">
                                 <div className="col-lg-2 ">
 
-                                  <Link to='/Admin/Corporate/List' className="btn btn-primary pull-left">
+                                  <Link to='/Admin/Users/Admin/List' className="btn btn-primary pull-left">
                                     Back</Link>
 
                                 </div>
                                 <div className="col-lg-4 col-lg-offset-6">
                                     <div className="pull-right">
-                                      <Link to='/Admin/Corporate/Edit/1' className="btn btn-success">
+                                      <Link to='/Admin/Users/Admin/Edit/1' className="btn btn-success">
                                         Edit</Link>
                                         <button type="button" className="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
                                     </div>

@@ -18,13 +18,18 @@ export var CorporateList = React.createClass({
                                     <lable>
                                         Search</lable>
                                 </div>
-                                <div className="col-lg-9">
+                                <div className="col-lg-8">
                                     <input type="text" className="form-control" placeholder="Search"></input>
                                 </div>
-                                <div className="col-lg-2">
-                                    <Link to='/Admin/Corporate/Add' className="btn btn-primary pull-right">
-                                        Add</Link>
+                                <div className="col-lg-3">
+                                    <div className="pull-right">
+                                        <Link to='/Admin/Users/Coporate/1/Add' className="btn btn-primary">
+                                            Add</Link>
+                                        <Link to='/Admin/Users/Corporate/CorporateListForUsersAdd' className="btn btn-success">
+                                            Back</Link>
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
                         <div className="panel-body table-responsive">
@@ -32,10 +37,10 @@ export var CorporateList = React.createClass({
                                 <thead>
                                     <tr>
                                         <th>S.No</th>
-                                        <th>Log</th>
                                         <th>Name</th>
-                                        <th>MD/HR</th>
-                                        <th>Email ID</th>
+                                        <th>Role</th>
+                                        <th>Email Id</th>
+                                        <th>Mobile No</th>
                                         <th>View</th>
                                         <th>Edit</th>
                                         <th>Delet</th>
@@ -45,97 +50,21 @@ export var CorporateList = React.createClass({
                                     <tr>
                                         <td>01</td>
                                         <td>
-                                            <img src="" className="img-responsiv"></img>
+                                            Murali M
                                         </td>
-                                        <td>hhhhh</td>
-                                        <td>jhj</td>
-                                        <td>tharu@gmail.com</td>
+                                        <td>Admin</td>
+                                        <td>murlaim4242@gmail.com</td>
+                                        <td>7795929033</td>
                                         <td>
-                                            <Link to='/Admin/Corporate/View/1' className="btn btn-success btn-sm">
+                                            <Link to='/Admin/Users/Coporate/1/View/1' className="btn btn-success btn-sm">
                                                 View</Link>
                                         </td>
                                         <td>
-                                          <Link to='/Admin/Corporate/Edit/1' className="btn btn-warning btn-sm">
-                                              Edit</Link>
-                                          </td>
+                                            <Link to='/Admin/Users/Coporate/1/Edit/1' className="btn btn-warning btn-sm">
+                                                Edit</Link>
+                                        </td>
                                         <td>
                                             <button type="button" className="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal">Delete</button>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>01</td>
-                                        <td>
-                                            <img src="" className="img-responsiv"></img>
-                                        </td>
-                                        <td>hhhhh</td>
-                                        <td>jhj</td>
-                                        <td>tharu@gmail.com</td>
-                                        <td>
-                                            <button type="button" className="btn btn-success btn-sm">View</button>
-                                        </td>
-                                        <td>
-                                            <button type="button" className="btn btn-warning btn-sm">Edit</button>
-                                        </td>
-                                        <td>
-                                            <button type="button" className="btn btn-danger btn-sm">Delete</button>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>01</td>
-                                        <td>
-                                            <img src="" className="img-responsiv"></img>
-                                        </td>
-                                        <td>hhhhh</td>
-                                        <td>jhj</td>
-                                        <td>tharu@gmail.com</td>
-                                        <td>
-                                            <button type="button" className="btn btn-success btn-sm">View</button>
-                                        </td>
-                                        <td>
-                                            <button type="button" className="btn btn-warning btn-sm">Edit</button>
-                                        </td>
-                                        <td>
-                                            <button type="button" className="btn btn-danger btn-sm">Delete</button>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>01</td>
-                                        <td>
-                                            <img src="" className="img-responsiv"></img>
-                                        </td>
-                                        <td>hhhhh</td>
-                                        <td>jhj</td>
-                                        <td>tharu@gmail.com</td>
-                                        <td>
-                                            <button type="button" className="btn btn-success btn-sm">View</button>
-                                        </td>
-                                        <td>
-                                            <button type="button" className="btn btn-warning btn-sm">Edit</button>
-                                        </td>
-                                        <td>
-                                            <button type="button" className="btn btn-danger btn-sm">Delete</button>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>01</td>
-                                        <td>
-                                            <img src="" className="img-responsiv"></img>
-                                        </td>
-                                        <td>hhhhh</td>
-                                        <td>jhj</td>
-                                        <td>tharu@gmail.com</td>
-                                        <td>
-                                            <button type="button" className="btn btn-success btn-sm">View</button>
-                                        </td>
-                                        <td>
-                                            <button type="button" className="btn btn-warning btn-sm">Edit</button>
-                                        </td>
-                                        <td>
-                                            <button type="button" className="btn btn-danger btn-sm">Delete</button>
                                         </td>
                                     </tr>
                                 </tbody>

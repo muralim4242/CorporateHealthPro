@@ -60,7 +60,7 @@ export var HeaderAndNav = React.createClass({
                             </li>
 
                             <li>
-                                <Link to='/Admin/Camps/List' activeClassName="active">
+                                <Link to='/Admin/Camp/SelectCompany' activeClassName="active">
                                     <i className="glyphicon glyphicon-user"></i>Camp</Link>
 
                             </li>

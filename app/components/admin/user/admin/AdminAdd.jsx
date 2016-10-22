@@ -18,37 +18,67 @@ export var AdminAdd = React.createClass({
                             </div>
                             <div className="panel-body">
                                 <div className="form-group">
-                                    <label>Name</label>
-                                    <input type="text" className="form-control" placeholder="Name"/>
+                                    <label>First name</label>
+                                    <input type="text" className="form-control" placeholder="FName"/>
                                 </div>
                                 <div className="form-group">
-                                    <label>MD/HR</label>
-                                    <input type="text" className="form-control" placeholder="MD/HR"/>
+                                    <label>Last Name</label>
+                                    <input type="text" className="form-control" placeholder="LName"/>
+                                </div>
+                                <div className="form-group">
+                                    <label>Gender</label>
+                                    <select className="form-control">
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                    </select>
+                                </div>
+                                <div className="form-group">
+                                    <label>Role</label>
+                                    <select className="form-control">
+                                        <option>Super Admin</option>
+                                        <option>Admin</option>
+                                        <option>Manager</option>
+                                        <option>Executive</option>
+                                        <option>Doctor</option>
+                                    </select>
+                                </div>
+                                <div className="form-group">
+                                    <label>DOB</label>
+                                    <input type="date" className="form-control" placeholder="DOB"/>
                                 </div>
                                 <div className="form-group">
                                     <label>Email address</label>
                                     <input type="email" className="form-control" placeholder="Email"/>
                                 </div>
                                 <div className="form-group">
+                                    <label>Mobile</label>
+                                    <input type="text" className="form-control" placeholder="Mobile"/>
+                                </div>
+                                <div className="form-group">
                                     <label>Address</label>
                                     <textarea className="form-control" rows="3"></textarea>
                                 </div>
                                 <div className="form-group">
-                                    <label>MD/HR Say</label>
-                                    <textarea className="form-control" rows="3"></textarea>
+                                    <label>Pincode</label>
+                                    <input type="text" className="form-control" placeholder="Pincode"/>
                                 </div>
 
                                 <div className="form-group">
-                                    <label>Logo</label>
-                                    <input type="file"></input>
+                                    <label>Blood Group</label>
+                                    <input type="text" className="form-control" placeholder="Blood Group"/>
                                 </div>
                                 <div className="form-group">
-                                    <label>MD/HR Photo</label>
+                                    <label>Designation</label>
+                                    <input type="text" className="form-control" placeholder="Designation"/>
+                                </div>
+                                <div className="form-group">
+                                    <label>Photo</label>
                                     <input type="file"></input>
                                 </div>
+
                             </div>
                             <div className="panel-footer">
-                                <Link to='/Admin/Corporate/List' className="btn btn-danger">
+                                <Link to='/Admin/Users/Admin/List' className="btn btn-danger">
                                     Back</Link>
                                 <button type="submit" className="btn btn-success pull-right">Submit</button>
                             </div>

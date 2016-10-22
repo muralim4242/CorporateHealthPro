@@ -5,7 +5,7 @@ import * as actions from 'actions';
 var {Link} = require("react-router");
 import ContentBodyHeader from 'common/ContentBodyHeader';
 
-export var AdminList = React.createClass({
+export var CorporateListForUsersAdd = React.createClass({
     render() {
         return (
             <div>
@@ -21,10 +21,6 @@ export var AdminList = React.createClass({
                                 <div className="col-lg-9">
                                     <input type="text" className="form-control" placeholder="Search"></input>
                                 </div>
-                                <div className="col-lg-2">
-                                    <Link to='/Admin/Users/Admin/Add' className="btn btn-primary pull-right">
-                                        Add</Link>
-                                </div>
                             </div>
                         </div>
                         <div className="panel-body table-responsive">
@@ -32,34 +28,25 @@ export var AdminList = React.createClass({
                                 <thead>
                                     <tr>
                                         <th>S.No</th>
+                                        <th>Log</th>
                                         <th>Name</th>
-                                        <th>Role</th>
-                                        <th>Email Id</th>
-                                        <th>Mobile No</th>
-                                        <th>View</th>
-                                        <th>Edit</th>
-                                        <th>Delet</th>
+                                        <th>MD/HR</th>
+                                        <th>Email ID</th>
+                                        <th>Add Users</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>01</td>
                                         <td>
-                                            Murali M
+                                            <img src="" className="img-responsiv"></img>
                                         </td>
-                                        <td>Admin</td>
-                                        <td>murlaim4242@gmail.com</td>
-                                        <td>7795929033</td>
+                                        <td>hhhhh</td>
+                                        <td>jhj</td>
+                                        <td>tharu@gmail.com</td>
                                         <td>
-                                            <Link to='/Admin/Users/Admin/View/1' className="btn btn-success btn-sm">
-                                                View</Link>
-                                        </td>
-                                        <td>
-                                            <Link to='/Admin/Users/Admin/Edit/1' className="btn btn-warning btn-sm">
-                                                Edit</Link>
-                                        </td>
-                                        <td>
-                                            <button type="button" className="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                                            <Link to='/Admin/Users/Coporate/1/List' className="btn btn-success btn-sm">
+                                                Add Users</Link>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -67,10 +54,9 @@ export var AdminList = React.createClass({
                         </div>
                     </div>
                 </div>
-
             </div>
         )
     }
 });
 
-export default Redux.connect()(AdminList);
+export default Redux.connect()(CorporateListForUsersAdd);
