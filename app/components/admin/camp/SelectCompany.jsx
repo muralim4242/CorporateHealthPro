@@ -7,9 +7,10 @@ import ContentBodyHeader from 'common/ContentBodyHeader';
 
 export var SelectCompany = React.createClass({
     onClickHandler: () => {
-        if (this.refs.searchText.value != "") {
-            hashHistory.push('/Admin/Camp/List');
-        }
+        // if (this.refs.searchText.value != "") {
+        //     hashHistory.push('/Admin/Camp/1/List');
+        // }
+        hashHistory.push('/Admin/Camp/1/List');
     },
     render() {
         return (

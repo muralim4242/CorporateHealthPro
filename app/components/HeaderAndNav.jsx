@@ -1,16 +1,14 @@
 import React from 'react';
-var {Link, IndexLink,hashHistory} = require("react-router");
+var {Link, IndexLink, hashHistory} = require("react-router");
 
 import * as Redux from 'react-redux';
 
 import * as actions from 'actions';
 
 export var HeaderAndNav = React.createClass({
-    onLogoutHandler:(e)=>
-    {
+    onLogoutHandler: (e) => {
         hashHistory.push('/');
-    }
-    ,
+    },
     render() {
         return (
             <div>
@@ -28,20 +26,23 @@ export var HeaderAndNav = React.createClass({
                         <li className="dropdown">
                             <a href="#" className="dropdown-toggle" data-toggle="dropdown">
                                 <i className="glyphicon glyphicon-user"></i>
-                              {" "}  Murali M
+                                {" "}
+                                Murali M
                                 <b className="caret"></b>
                             </a>
                             <ul className="dropdown-menu">
                                 <li>
                                     <Link to="/Admin/Profile">
                                         <i className="glyphicon glyphicon-eye-open"></i>
-                                    {" "}    Profile</Link>
+                                        {" "}
+                                        Profile</Link>
                                 </li>
                                 <li className="divider"></li>
                                 <li>
-                                    <a  onClick={this.onLogoutHandler}>
-                                        <i  className="glyphicon glyphicon-log-out"></i>
-                                      {" "}  Log Out</a>
+                                    <a onClick={this.onLogoutHandler}>
+                                        <i className="glyphicon glyphicon-log-out"></i>
+                                        {" "}
+                                        Log Out</a>
                                 </li>
                             </ul>
                         </li>
@@ -52,16 +53,19 @@ export var HeaderAndNav = React.createClass({
                             <li>
                                 <IndexLink to="/Admin" activeClassName="active">
                                     <i className="glyphicon glyphicon-dashboard"></i>
-                                  {" "}  Dashboard</IndexLink>
+                                    {" "}
+                                    Dashboard</IndexLink>
 
                             </li>
                             <li>
                                 <Link to='/Admin/Corporate/List' activeClassName="active">
-                                    <i className="glyphicon glyphicon-briefcase"></i> {" "}Corporate</Link>
+                                    <i className="glyphicon glyphicon-briefcase"></i>
+                                    {" "}Corporate</Link>
                             </li>
                             <li>
                                 <Link to='/Admin/Users/UserCheck' activeClassName="active">
-                                    <i className="glyphicon glyphicon-user"></i> {" "}User</Link>
+                                    <i className="glyphicon glyphicon-user"></i>
+                                    {" "}User</Link>
                             </li>
 
                             <li>
@@ -70,7 +74,7 @@ export var HeaderAndNav = React.createClass({
 
                             </li>
                             <li>
-                                <Link to='/Admin/Reports' activeClassName="active">
+                                <Link to='/Admin/Report/SelectCompanyAndCamp' activeClassName="active">
                                     <i className="glyphicon glyphicon-list-alt"></i>{" "}Report</Link>
                             </li>
                         </ul>

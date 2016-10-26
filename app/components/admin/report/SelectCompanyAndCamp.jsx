@@ -5,11 +5,12 @@ import * as actions from 'actions';
 import {hashHistory} from 'react-router';
 import ContentBodyHeader from 'common/ContentBodyHeader';
 
-export var SelectCompany = React.createClass({
+export var SelectCompanyAndCamp = React.createClass({
     onClickHandler: () => {
-        if (this.refs.searchText.value != "") {
-            hashHistory.push('/Admin/Camp/List');
-        }
+        // if (this.refs.searchText.value != "") {
+        //     hashHistory.push('/Admin/Camp/List');
+        // }
+        hashHistory.push('/Admin/Report/1/1/ReportCheck')
     },
     render() {
         return (
@@ -25,6 +26,15 @@ export var SelectCompany = React.createClass({
                                 <label>Company Name</label>
                                 <input type="text" className="form-control" ref="searchText" placeholder="Type company name and wait"/>
                             </div>
+
+                            <div className="form-group">
+                                <label>Camp</label>
+                                <select className="form-control">
+                                    <option>Jan 2016</option>
+                                    <option>Apr 2016</option>
+                                    <option>July 2016</option>
+                                </select>
+                            </div>
                         </div>
                         <div className="panel-footer">
                             <button type="button" className="btn btn-success" onClick={this.onClickHandler}>Submit</button>
@@ -37,4 +47,4 @@ export var SelectCompany = React.createClass({
     }
 });
 
-export default Redux.connect()(SelectCompany);
+export default Redux.connect()(SelectCompanyAndCamp);

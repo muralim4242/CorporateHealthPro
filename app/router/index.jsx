@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Router, IndexRoute, hashHistory,browserHistory} from 'react-router';
+import {Route, Router, IndexRoute, hashHistory, browserHistory} from 'react-router';
 
 import Login from 'Login';
 
@@ -28,9 +28,16 @@ import CampAdd from 'admin/camp/CampAdd';
 import CampView from 'admin/camp/CampView';
 import SelectCompany from 'admin/camp/SelectCompany';
 
+import Reports from 'admin/report/Reports';
+import ReportList from 'admin/report/ReportList';
+import ReportAdd from 'admin/report/ReportAdd';
+import ReportView from 'admin/report/ReportView';
+import SelectCompanyAndCamp from 'admin/report/SelectCompanyAndCamp';
+import ReportCheck from 'admin/report/ReportCheck';
+import ReportTypeCheck from 'admin/report/ReportTypeCheck';
+import Assessment from 'admin/report/Assessment';
+
 import Profile from "admin/Profile";
-
-
 
 //import firebase from 'app/firebase/';
 
@@ -77,6 +84,17 @@ export default(
                     <Route path="/Admin/Camp/:corId/Add" component={CampAdd}/>
                     <Route path="/Admin/Camp/:corId/Edit/:id" component={CampAdd}/>
                     <Route path="/Admin/Camp/:corId/View/:id" component={CampView}/>
+                </Route>
+
+                <Route path="/Admin/Report" component={Reports}>
+                    <Route path="/Admin/Report/SelectCompanyAndCamp" component={SelectCompanyAndCamp}/>
+                    <Route path="/Admin/Report/:corpId/:campId/ReportCheck" component={ReportCheck}/>
+                    <Route path="/Admin/Report/:corpId/:campId/View/ReportTypeCheck" component={ReportTypeCheck}/>
+                    <Route path="/Admin/Users/:corpId/:campId/View/ReportTypeCheck/User/Assessment" component={Assessment}/>
+                    <Route path="/Admin/Report/:corId/List" component={ReportList}/>
+                    <Route path="/Admin/Report/:corId/Add" component={ReportAdd}/>
+                    <Route path="/Admin/Report/:corId/Edit/:id" component={ReportAdd}/>
+                    <Route path="/Admin/Report/:corId/View/:id" component={ReportView}/>
                 </Route>
                 <Route path="/Admin/Profile" component={Profile}/>
                 <IndexRoute component={Dashboard}/>

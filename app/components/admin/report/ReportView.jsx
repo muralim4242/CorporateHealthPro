@@ -5,7 +5,7 @@ import * as actions from 'actions';
 import {Link} from 'react-router';
 import ContentBodyHeader from 'common/ContentBodyHeader';
 
-export var  = React.createClass({
+export var  ReportView= React.createClass({
     render() {
         return (
             <div>
