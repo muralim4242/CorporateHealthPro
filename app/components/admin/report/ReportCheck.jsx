@@ -19,7 +19,7 @@ export var ReportCheck = React.createClass({
     render() {
         return (
             <div>
-                <ContentBodyHeader path={this.props.route.path}/>
+                <ContentBodyHeader path={this.props.location.pathname}/>
                 <div className="col-lg-6">
                     <div className="panel panel-default">
                         <div className="panel-heading">

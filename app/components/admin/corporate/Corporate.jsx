@@ -9,7 +9,7 @@ export var Corporate = React.createClass({
         return (
             <div>
               <div className="container-fluid">
-                        {this.props.children}            
+                        {this.props.children}
                   <div className="modal fade" id="deleteModal" tabIndex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
                       <div className="modal-dialog" role="document">
                           <div className="modal-content">
@@ -17,7 +17,7 @@ export var Corporate = React.createClass({
                                   <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                   </button>
-                                  <h4 className="modal-title" id="gridSystemModalLabel">Modal title</h4>
+                                  <h4 className="modal-title" id="gridSystemModalLabel">Delete record</h4>
                               </div>
                               <div className="modal-body">
                                   <p className="leaner">Do you want to delete Corporate List</p>

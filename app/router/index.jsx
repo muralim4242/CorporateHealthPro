@@ -91,10 +91,8 @@ export default(
                     <Route path="/Admin/Report/:corpId/:campId/ReportCheck" component={ReportCheck}/>
                     <Route path="/Admin/Report/:corpId/:campId/View/ReportTypeCheck" component={ReportTypeCheck}/>
                     <Route path="/Admin/Users/:corpId/:campId/View/ReportTypeCheck/User/Assessment" component={Assessment}/>
-                    <Route path="/Admin/Report/:corId/List" component={ReportList}/>
-                    <Route path="/Admin/Report/:corId/Add" component={ReportAdd}/>
-                    <Route path="/Admin/Report/:corId/Edit/:id" component={ReportAdd}/>
-                    <Route path="/Admin/Report/:corId/View/:id" component={ReportView}/>
+                    <Route path="/Admin/Users/:corpId/:campId/View/ReportTypeCheck/User/Assessment/:assName/List" component={ReportList}/>
+                    <Route path="/Admin/Users/:corpId/:campId/View/ReportTypeCheck/User/Assessment/:assName/View/:id" component={ReportView}/>
                 </Route>
                 <Route path="/Admin/Profile" component={Profile}/>
                 <IndexRoute component={Dashboard}/>

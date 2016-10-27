@@ -9,7 +9,7 @@ export var CorporateListForUsersAdd = React.createClass({
     render() {
         return (
             <div>
-                <ContentBodyHeader path={this.props.route.path}/>
+                <ContentBodyHeader path={this.props.location.pathname}/>
                 <div className="col-lg-8">
                     <div className="panel panel-default">
                         <div className="panel-heading">

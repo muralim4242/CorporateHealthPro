@@ -9,7 +9,7 @@ export var ReportAdd = React.createClass({
     render() {
         return (
             <div>
-                <ContentBodyHeader path={this.props.route.path}/>
+                <ContentBodyHeader path={this.props.location.pathname}/>
                 <div className="col-lg-6">
                     <form>
                         <div className="panel panel-default">
