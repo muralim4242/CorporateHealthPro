@@ -4,27 +4,9 @@ import * as Redux from 'react-redux';
 import * as actions from 'actions';
 import {Link} from 'react-router';
 import ContentBodyHeader from 'common/ContentBodyHeader';
-import Dental from 'admin/report/assessmentViewTemplate/user/Dental';
-import Hearing from 'admin/report/assessmentViewTemplate/user/Hearing';
-import General from 'admin/report/assessmentViewTemplate/user/General';
-import GrowthAndDevelopment from 'admin/report/assessmentViewTemplate/user/GrowthAndDevelopment';
-import Vission from 'admin/report/assessmentViewTemplate/user/Vission';
 
-export var ReportView = React.createClass({
+export var ReportConsolidatedView = React.createClass({
     render() {
-        var reportTypeDetail = () => {
-            if (this.props.params["assName"] === "Dental") {
-                return (<Dental/>);
-            } else if (this.props.params["assName"] === "Hearing") {
-                return (<Hearing/>);
-            } else if (this.props.params["assName"] === "Growth And Development") {
-                return (<GrowthAndDevelopment/>);
-            } else if (this.props.params["assName"] === "General") {
-                return (<General/>);
-            } else {
-                return (<Vission/>);
-            }
-        };
         return (
             <div>
                 <ContentBodyHeader path={this.props.location.pathname}/>
@@ -49,87 +31,44 @@ export var ReportView = React.createClass({
                             </div>
                             <br/>
                             <br/>
-                            <div className="row text-center">
-                                <img src={require('app/images/murali.jpg')} className="img-thumbnail" width="150px"></img>
-                            </div>
-                            <br/>
-                            <br/>
                             <div className="row">
                                 <table className="table table-bordered text-left">
                                     <thead>
                                         <tr>
                                             <th>
-                                                Name
+                                                Excellent
                                             </th>
-                                            <th>
-                                                Murali
-                                            </th>
+                                            <td>
+                                                30
+                                            </td>
+                                            <td className="btn-success">
+                                            </td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <th>
-                                                Gender
+                                                Good
                                             </th>
                                             <td>
-                                                Male
+                                                70
+                                            </td>
+                                            <td className="btn-warning">
                                             </td>
                                         </tr>
                                         <tr>
                                             <th>
-                                                DOB
+                                                Poor
                                             </th>
                                             <td>
-                                                02-070-989
+                                                50
                                             </td>
-                                        </tr>
-                                        <tr>
-                                            <th>
-                                                Mobile
-                                            </th>
-                                            <td>
-                                                7795929033
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>
-                                                Address
-                                            </th>
-                                            <td>
-                                                #84,1st floor,shaheen taj building, kote bheedi,4th street, varthur, bangalore- 560087
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>
-                                                Pincode
-                                            </th>
-                                            <td>
-                                                560087
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>
-                                                Blood group
-                                            </th>
-                                            <td>
-                                                A+
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>
-                                                Designation
-                                            </th>
-                                            <td>
-                                                CAD
+                                            <td className="btn-danger">
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
 
-                            </div>
-
-                            <div className="row text-center">
-                                {reportTypeDetail()}
                             </div>
 
                             <div className="row text-center">
@@ -157,7 +96,7 @@ export var ReportView = React.createClass({
                         <div className="panel-footer">
                             <div className="row">
                                 <div className="col-md-2 ">
-                                    <Link to={'/Admin/Report/1/1/View/ReportTypeCheck/User/Assessment/' + this.props.params["assName"] + '/List'} className="btn btn-primary pull-left">
+                                    <Link to={'/Admin/Report/1/1/View/ReportTypeCheck/Consolidated/Assessment/' + this.props.params["assName"] + '/List'} className="btn btn-primary pull-left">
                                         Back</Link>
                                 </div>
                                 <div className="col-md-4 col-md-offset-6">
@@ -190,4 +129,4 @@ export var ReportView = React.createClass({
     }
 });
 
-export default Redux.connect()(ReportView);
+export default Redux.connect()(ReportConsolidatedView);

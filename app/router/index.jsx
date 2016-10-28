@@ -30,12 +30,14 @@ import SelectCompany from 'admin/camp/SelectCompany';
 
 import Reports from 'admin/report/Reports';
 import ReportList from 'admin/report/ReportList';
-import ReportAdd from 'admin/report/ReportAdd';
 import ReportView from 'admin/report/ReportView';
 import SelectCompanyAndCamp from 'admin/report/SelectCompanyAndCamp';
 import ReportCheck from 'admin/report/ReportCheck';
 import ReportTypeCheck from 'admin/report/ReportTypeCheck';
 import Assessment from 'admin/report/Assessment';
+import ReportConsolidatedView from 'admin/report/ReportConsolidatedView';
+import ReportCreateList from 'admin/report/ReportCreateList';
+import ReportAdd from 'admin/report/ReportAdd';
 
 import Profile from "admin/Profile";
 
@@ -90,9 +92,13 @@ export default(
                     <Route path="/Admin/Report/SelectCompanyAndCamp" component={SelectCompanyAndCamp}/>
                     <Route path="/Admin/Report/:corpId/:campId/ReportCheck" component={ReportCheck}/>
                     <Route path="/Admin/Report/:corpId/:campId/View/ReportTypeCheck" component={ReportTypeCheck}/>
-                    <Route path="/Admin/Users/:corpId/:campId/View/ReportTypeCheck/User/Assessment" component={Assessment}/>
-                    <Route path="/Admin/Users/:corpId/:campId/View/ReportTypeCheck/User/Assessment/:assName/List" component={ReportList}/>
-                    <Route path="/Admin/Users/:corpId/:campId/View/ReportTypeCheck/User/Assessment/:assName/View/:id" component={ReportView}/>
+                    <Route path="/Admin/Report/:corpId/:campId/View/ReportTypeCheck/:type/Assessment" component={Assessment}/>
+                    <Route path="/Admin/Report/:corpId/:campId/View/ReportTypeCheck/:type/Assessment/:assName/List" component={ReportList}/>
+                    <Route path="/Admin/Report/:corpId/:campId/View/ReportTypeCheck/:type/Assessment/:assName/View/:id" component={ReportView}/>
+                    <Route path="/Admin/Report/:corpId/:campId/View/ReportTypeCheck/:type/Assessment/:assName/ConsView" component={ReportConsolidatedView}/>
+                    <Route path="/Admin/Report/:corpId/:campId/Create/Assessment" component={Assessment}/>
+                    <Route path="/Admin/Report/:corpId/:campId/Create/Assessment/:assName/List" component={ReportCreateList}/>
+                    <Route path="/Admin/Report/:corpId/:campId/Create/Assessment/:assName/Add" component={ReportAdd}/>
                 </Route>
                 <Route path="/Admin/Profile" component={Profile}/>
                 <IndexRoute component={Dashboard}/>

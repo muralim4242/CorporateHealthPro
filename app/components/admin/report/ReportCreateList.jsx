@@ -5,7 +5,7 @@ import * as actions from 'actions';
 var {Link} = require("react-router");
 import ContentBodyHeader from 'common/ContentBodyHeader';
 
-export var ReportList = React.createClass({
+export var ReportCreateList = React.createClass({
     render() {
         return (
             <div>
@@ -23,7 +23,7 @@ export var ReportList = React.createClass({
                                 </div>
                                 <div className="col-lg-3">
                                     <div className="pull-right">
-                                        <Link to='/Admin/Report/1/1/View/ReportTypeCheck/User/Assessment' className="btn btn-success">
+                                        <Link to='/Admin/Report/1/1/Create/Assessment/List' className="btn btn-success">
                                             Back</Link>
                                     </div>
                                 </div>
@@ -39,10 +39,7 @@ export var ReportList = React.createClass({
                                         <th>Role</th>
                                         <th>Email Id</th>
                                         <th>Mobile No</th>
-                                        <th>View</th>
-                                        <th>Upload</th>
-                                        <th>Download</th>
-                                        <th>Delete</th>
+                                        <th>Start</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -55,31 +52,8 @@ export var ReportList = React.createClass({
                                         <td>murlaim4242@gmail.com</td>
                                         <td>7795929033</td>
                                         <td>
-                                            <Link to={'/Admin/Report/1/1/View/ReportTypeCheck/User/Assessment/' +this.props.params["assName" ]+'/View/1'} className="btn btn-success btn-sm">
-                                                View</Link>
-                                        </td>
-                                        <td>
-                                            <button type="button" className="btn btn-warning btn-sm" data-toggle="modal" data-target="#uploadModal">Upload</button>
-                                        </td>
-                                        <td>
-
-                                            <div className="btn-group">
-                                                <button type="button" className="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    Download
-                                                    <span className="caret"></span>
-                                                </button>
-                                                <ul className="dropdown-menu">
-                                                    <li>
-                                                        <a href="#">.pdf</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">.xls</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <button type="button" className="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                                            <Link to={'/Admin/Report/1/1/Create/Assessment/' + this.props.params["assName"] + '/Add'} className="btn btn-success btn-sm">
+                                                Start</Link>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -92,4 +66,4 @@ export var ReportList = React.createClass({
     }
 });
 
-export default Redux.connect()(ReportList);
+export default Redux.connect()(ReportCreateList);

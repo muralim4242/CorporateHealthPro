@@ -8,9 +8,9 @@ import ContentBodyHeader from 'common/ContentBodyHeader';
 export var ReportTypeCheck = React.createClass({
     onReportTypeChanged: (e) => {
         if (e.currentTarget.value === "Consolidated") {
-            hashHistory.push('/Admin/Users/Admin/List');
+            hashHistory.push('/Admin/Report/1/1/View/ReportTypeCheck/Consolidated/Assessment');
         } else {
-            hashHistory.push('/Admin/Users/1/1/View/ReportTypeCheck/User/Assessment');
+            hashHistory.push('/Admin/Report/1/1/View/ReportTypeCheck/User/Assessment');
         }
     },
     render() {

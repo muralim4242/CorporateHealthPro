@@ -10,7 +10,7 @@ export var ReportCheck = React.createClass({
   {
     if(e.currentTarget.value==="Create")
     {
-        hashHistory.push('/Admin/Users/Admin/List');
+        hashHistory.push('/Admin/Report/1/1/Create/Assessment');
     }
     else {
         hashHistory.push('/Admin/Report/1/1/View/ReportTypeCheck');

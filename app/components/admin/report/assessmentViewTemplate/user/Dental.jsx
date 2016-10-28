@@ -7,8 +7,8 @@ export var Dental = React.createClass({
     render() {
         return (
             <div>
-                <h2>Dental Detail</h2>
-              
+                <h2 className="bg-primary">Dental Detail</h2>
+
                 <table className="table table-bordered text-left">
                     <tbody>
                         <tr>
@@ -156,7 +156,7 @@ export var Dental = React.createClass({
                         </table>
 
                         <div className="row text-center">
-                            <h3>Comments</h3>
+                            <h3 className="bg-primary">Comments</h3>
                             <p>
                                 Refer to dentist
                             </p>
