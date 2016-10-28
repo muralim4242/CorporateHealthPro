@@ -28,7 +28,7 @@ export var ReportView = React.createClass({
         return (
             <div>
                 <ContentBodyHeader path={this.props.location.pathname}/>
-                <div className="col-lg-12">
+                <div className="col-md-12">
                     <div className="panel panel-default">
                         <div className="panel-heading">
                             View
@@ -38,8 +38,10 @@ export var ReportView = React.createClass({
                                 <img src={require('app/images/Company_Logos_01.jpg')} width="100px"></img>
                                 <h2>{this.props.params["assName"]}
                                     Report</h2>
+                                <hr/>
                                 <img src={require('app/images/murali.jpg')} className="img-thumbnail" width="100px"></img>
                             </div>
+
                             <div className="row">
                                 <table className="table table-bordered text-left">
                                     <thead>
@@ -111,36 +113,42 @@ export var ReportView = React.createClass({
                                         </tr>
                                     </tbody>
                                 </table>
+                                <hr/>
                             </div>
+
                             <div className="row text-center">
                                 {reportTypeDetail()}
                             </div>
+                            <hr/>
                             <div className="row text-center">
-                                <div className="col-lg-2">
+                                <div className="col-md-2 col-md-offset-2">
+                                    <img src={require('app/images/som.jpg')} width="100px"></img>
                                     <h4>Doctor sign</h4>
                                 </div>
-                                <div className="col-lg-2 pull-right">
+                                <div className="col-md-2 col-md-offset-4">
+                                    <img src={require('app/images/B ST8100397752sop.jpg')} width="100px"></img>
                                     <h4>HR/MD sign</h4>
                                 </div>
                             </div>
 
                             <div className="row text-center">
                                 <h2>HR/MD Says</h2>
-                                <div className="col-lg-3 text-left">
+                                <hr/>
+                                <div className="col-md-3 text-left">
                                     <img src={require("app/images/murali.jpg")} className="img-thumbnail" width="100px"/>
                                 </div>
-                                <div className="col-lg-3 text-left">
+                                <div className="col-md-3 text-left">
                                     <p>Health is well</p>
                                 </div>
                             </div>
                         </div>
                         <div className="panel-footer">
                             <div className="row">
-                                <div className="col-lg-2 ">
+                                <div className="col-md-2 ">
                                     <Link to={'/Admin/Users/1/1/View/ReportTypeCheck/User/Assessment/' + this.props.params["assName"] + '/List'} className="btn btn-primary pull-left">
                                         Back</Link>
                                 </div>
-                                <div className="col-lg-4 col-lg-offset-6">
+                                <div className="col-md-4 col-md-offset-6">
                                     <div className="pull-right">
 
                                         <button type="button" className="btn btn-warning " data-toggle="modal" data-target="#uploadModal">Upload</button>
