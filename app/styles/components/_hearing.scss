@@ -2,11 +2,14 @@
     .info {
         background-color: #d9edf7;
         border: 3px solid white;
+        font-size: 10px;
     }
 
     td {
         padding: 5px;
         color: black;
+        text-align: center;
+        vertical-align: middle;
     }
 
     .dot {
@@ -14,12 +17,11 @@
         width: 10px;
         background-color: #555;
         border-radius: 5px;
-        vertical-align: middle;
-        margin-left: 5px;
     }
 
     .num-color {
         background-color: teal;
         border: 3px solid white;
+        font-size: 10px;
     }
 }

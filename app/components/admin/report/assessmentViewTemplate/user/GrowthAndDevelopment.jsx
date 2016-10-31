@@ -7,95 +7,110 @@ export var GrowthAndDevelopment = React.createClass({
     render() {
         return (
             <div>
-                <h1 className="bg-primary">Growth And Development Detail</h1>
+                <h1 className="bg-primary">Basic Health Detail</h1>
                 <div className="row">
                     <div className="col-md-12">
                         <table className="table table-bordered">
                             <tbody>
                                 <tr>
                                     <th>
-                                        Squint</th>
+                                        Height</th>
+                                    <td>6.5 ft</td>
+                                    <th>
+                                        Weight</th>
+                                    <td>80 kg</td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        BMI</th>
+                                    <td>12</td>
+                                    <th>
+
+                                        GRBS/PPBS</th>
+                                    <td>23</td>
+                                </tr>
+
+                                <tr>
+                                    <th>
+                                        Blood Pressure</th>
+                                    <td>20</td>
+                                    <th>
+                                        ECG</th>
+                                    <td>
+                                        dasdas
+                                        <a href="#">File Name</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="col-md-12">
+                        <table className="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        Any breathing problem/ Asthma?</th>
                                     <td>No</td>
-                                    <th>
-                                        Conjunctiva</th>
-                                    <td>No</td>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        Cornea</th>
-                                    <td>No</td>
-                                    <th>
-
-                                        Is there any white pupil?</th>
-                                    <td>No</td>
                                 </tr>
 
                                 <tr>
                                     <th>
-                                        Is the eye wandering?</th>
-                                    <td>No</td>
-                                    <th>
-                                        Is the student color blind??</th>
-                                    <td>No</td>
-                                </tr>
-
-                                <tr>
-                                    <th>
-                                        Is the student night blind?</th>
-                                    <td>No</td>
-                                    <th>
-                                        Is the student suffering from Ocular alignment (Squint)?</th>
+                                        Does the employee have any Nasal allergies?</th>
                                     <td>Yes</td>
                                 </tr>
 
                                 <tr>
                                     <th>
-                                        Is the student wearing spectacles or lens?</th>
+                                        Does the employee have any Skin Allergies?</th>
                                     <td>Yes</td>
+
+                                </tr>
+
+                                <tr>
                                     <th>
-                                        Is there red or watery crust in the eye?</th>
+                                        Does the employee Smoke?</th>
+                                    <td>Yes</td>
+
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Does the employee consume Alcohol?</th>
                                     <td>Yes</td>
                                 </tr>
 
                                 <tr>
                                     <th>
-                                        Is the student rubbing eyes frequently?</th>
-                                    <td>Yes</td>
+                                        Do you experience Swelling in any body parts (abdomen, leg, hand)?</th>
+                                    <td>Yes in leg</td>
+                                </tr>
+
+                                <tr>
                                     <th>
-                                        Is the student unusually sensitive to bright light?</th>
+                                        History of any head injury?</th>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Are you Under any medication or treatment?</th>
                                     <td>Yes</td>
                                 </tr>
 
                                 <tr>
                                     <th>
-                                        Does the student suffer from nausea while studying?</th>
-                                    <td>Yes</td>
-                                    <th>
-                                        Does the student suffer from headache after or while reading?</th>
+                                        Does the employee has any Hunger problem?</th>
                                     <td>Yes</td>
                                 </tr>
-
                                 <tr>
                                     <th>
-                                        Is the student thrusting his head forward or backward while looking at distant object?</th>
-                                    <td>Yes</td>
-                                    <th>
-                                        Is the student turning or tilting the head to one side while reading?</th>
+                                        Does the Employee has normal Sleep?</th>
                                     <td>Yes</td>
                                 </tr>
-
                                 <tr>
                                     <th>
-                                        Is the student placing the head close to book while reading?</th>
-                                    <td>Yes</td>
-                                    <th>
-                                        Does the student suffer from blurred vision or double image?</th>
-                                    <td>Yes</td>
-                                </tr>
-
-                                <tr>
-                                    <th>
-                                        Indication for consultation with an Ophthalmologist?</th>
+                                        Does the employee has any Cardiac problem?</th>
                                     <td>Yes</td>
                                 </tr>
                             </tbody>
@@ -103,10 +118,12 @@ export var GrowthAndDevelopment = React.createClass({
                     </div>
                 </div>
                 <div className="row">
-                    <h2 className="bg-primary">
-                        Comments
-                    </h2>
-                    <p>Reffer to ENT</p>
+                    <div className="col-md-12">
+                        <h2 className="bg-primary">
+                            Comments
+                        </h2>
+                        <p>Reffer to ENT</p>
+                    </div>
                 </div>
             </div>
         )

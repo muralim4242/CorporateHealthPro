@@ -17,7 +17,7 @@ export var ReportView = React.createClass({
                 return (<Dental/>);
             } else if (this.props.params["assName"] === "Hearing") {
                 return (<Hearing/>);
-            } else if (this.props.params["assName"] === "Growth And Development") {
+            } else if (this.props.params["assName"] === "Basic Health") {
                 return (<GrowthAndDevelopment/>);
             } else if (this.props.params["assName"] === "General") {
                 return (<General/>);

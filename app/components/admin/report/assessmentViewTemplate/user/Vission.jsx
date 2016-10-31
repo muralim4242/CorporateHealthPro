@@ -22,82 +22,59 @@ export var Vission = React.createClass({
                                 </tr>
                                 <tr>
                                     <th>
-                                        Cornea</th>
-                                    <td>No</td>
+                                        Color vision</th>
+                                    <td>Normal</td>
                                     <th>
 
-                                        Is there any white pupil?</th>
-                                    <td>No</td>
-                                </tr>
-
-                                <tr>
-                                    <th>
-                                        Is the eye wandering?</th>
-                                    <td>No</td>
-                                    <th>
-                                        Is the student color blind??</th>
+                                        Cataract</th>
                                     <td>No</td>
                                 </tr>
 
                                 <tr>
                                     <th>
-                                        Is the student night blind?</th>
+                                        Pterygium</th>
                                     <td>No</td>
                                     <th>
-                                        Is the student suffering from Ocular alignment (Squint)?</th>
+                                        Glaucoma</th>
+                                    <td>No</td>
+                                </tr>
+
+                                <tr>
+                                    <th>
+                                        Is the employee wearing spectacles or lens?</th>
+                                    <td>No</td>
+                                    <th>
+                                        Is there any red or watery crust in the eye?</th>
                                     <td>Yes</td>
                                 </tr>
 
                                 <tr>
                                     <th>
-                                        Is the student wearing spectacles or lens?</th>
+                                        Is the Employee rubbing eyes frequently?</th>
                                     <td>Yes</td>
                                     <th>
-                                        Is there red or watery crust in the eye?</th>
+                                        Is the Employee unusually sensitive to bright light?</th>
                                     <td>Yes</td>
                                 </tr>
 
                                 <tr>
                                     <th>
-                                        Is the student rubbing eyes frequently?</th>
+                                        Does the Employee have night blindness?</th>
                                     <td>Yes</td>
                                     <th>
-                                        Is the student unusually sensitive to bright light?</th>
+                                        Does the Employee has headache after working for long time?</th>
                                     <td>Yes</td>
                                 </tr>
 
                                 <tr>
                                     <th>
-                                        Does the student suffer from nausea while studying?</th>
+                                        Does the Employee has Discharge from eyes / Sticky eyes?</th>
                                     <td>Yes</td>
                                     <th>
-                                        Does the student suffer from headache after or while reading?</th>
+                                        Does The employee referred to ophthalmologist?</th>
                                     <td>Yes</td>
                                 </tr>
 
-                                <tr>
-                                    <th>
-                                        Is the student thrusting his head forward or backward while looking at distant object?</th>
-                                    <td>Yes</td>
-                                    <th>
-                                        Is the student turning or tilting the head to one side while reading?</th>
-                                    <td>Yes</td>
-                                </tr>
-
-                                <tr>
-                                    <th>
-                                        Is the student placing the head close to book while reading?</th>
-                                    <td>Yes</td>
-                                      <th>
-                                          Does the student suffer from blurred vision or double image?</th>
-                                      <td>Yes</td>
-                                </tr>
-                            
-                                <tr>
-                                    <th>
-                                        Indication for consultation with an Ophthalmologist?</th>
-                                    <td>Yes</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -107,21 +84,23 @@ export var Vission = React.createClass({
                     <div className="col-md-12">
                         <table className="table table-bordered">
                             <thead>
-                                <th>
-                                    EYE
-                                </th>
-                                <th>
-                                    Acurity
-                                </th>
-                                <th>
-                                    Spherical
-                                </th>
-                                <th>
-                                    Cylindrical
-                                </th>
-                                <th>
-                                    Axis
-                                </th>
+                                <tr>
+                                    <th>
+                                        EYE
+                                    </th>
+                                    <th>
+                                        Acurity
+                                    </th>
+                                    <th>
+                                        Spherical
+                                    </th>
+                                    <th>
+                                        Cylindrical
+                                    </th>
+                                    <th>
+                                        Axis
+                                    </th>
+                                </tr>
                             </thead>
                             <tbody>
                                 <tr>

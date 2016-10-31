@@ -8,13 +8,13 @@ import ContentBodyHeader from 'common/ContentBodyHeader';
 
 export var ReportTypeCheck = React.createClass({
     render() {
-        var links = ['/Admin/Report/1/1/View/ReportTypeCheck/User/Assessment/Dental/List', '/Admin/Report/1/1/View/ReportTypeCheck/User/Assessment/General/List', '/Admin/Report/1/1/View/ReportTypeCheck/User/Assessment/Growth And Development/List', '/Admin/Report/1/1/View/ReportTypeCheck/User/Assessment/Vission/List', '/Admin/Report/1/1/View/ReportTypeCheck/User/Assessment/Hearing/List'];
+        var links = ['/Admin/Report/1/1/View/ReportTypeCheck/User/Assessment/Dental/List', '/Admin/Report/1/1/View/ReportTypeCheck/User/Assessment/General/List', '/Admin/Report/1/1/View/ReportTypeCheck/User/Assessment/Basic Health/List', '/Admin/Report/1/1/View/ReportTypeCheck/User/Assessment/Vission/List', '/Admin/Report/1/1/View/ReportTypeCheck/User/Assessment/Hearing/List'];
         if (this.props.location.pathname.split('/')[5] === "View") {
             if (this.props.params["type"] === "Consolidated") {
-                links = ['/Admin/Report/1/1/View/ReportTypeCheck/Consolidated/Assessment/Dental/ConsView', '/Admin/Report/1/1/View/ReportTypeCheck/Consolidated/Assessment/General/ConsView', '/Admin/Report/1/1/View/ReportTypeCheck/Consolidated/Assessment/Growth And Development/ConsView', '/Admin/Report/1/1/View/ReportTypeCheck/Consolidated/Assessment/Vission/ConsView', '/Admin/Report/1/1/View/ReportTypeCheck/Consolidated/Assessment/Hearing/ConsView'];
+                links = ['/Admin/Report/1/1/View/ReportTypeCheck/Consolidated/Assessment/Dental/ConsView', '/Admin/Report/1/1/View/ReportTypeCheck/Consolidated/Assessment/General/ConsView', '/Admin/Report/1/1/View/ReportTypeCheck/Consolidated/Assessment/Basic Health/ConsView', '/Admin/Report/1/1/View/ReportTypeCheck/Consolidated/Assessment/Vission/ConsView', '/Admin/Report/1/1/View/ReportTypeCheck/Consolidated/Assessment/Hearing/ConsView'];
             }
         } else {
-            links = ['/Admin/Report/1/1/Create/Assessment/Dental/List', '/Admin/Report/1/1/Create/Assessment/General/List', '/Admin/Report/1/1/Create/Assessment/Growth And Development/List', '/Admin/Report/1/1/Create/Assessment/Vission/List', '/Admin/Report/1/1/Create/Assessment/Hearing/List'];
+            links = ['/Admin/Report/1/1/Create/Assessment/Dental/List', '/Admin/Report/1/1/Create/Assessment/General/List', '/Admin/Report/1/1/Create/Assessment/Basic Health/List', '/Admin/Report/1/1/Create/Assessment/Vission/List', '/Admin/Report/1/1/Create/Assessment/Hearing/List'];
         }
         return (
             <div>
@@ -28,6 +28,16 @@ export var ReportTypeCheck = React.createClass({
                             <div className="row">
                                 <div className="col-lg-2 col-md-3 col-sm-6 col-xs-12 col-md-offset-3 col-lg-offset-4">
                                     <div className="assessment-image">
+                                        <Link to={links[2]} className="thumbnail">
+                                            <img src={require('app/images/gen.png')} alt="..."/>
+                                            <div className="caption text-center">
+                                                Basic Health
+                                            </div>
+                                        </Link>
+                                    </div>
+                                </div>
+                                <div className="col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                                    <div className="assessment-image">
                                         <Link to={links[0]} className="thumbnail">
                                             <img src={require('app/images/dt.png')} alt="..."/>
                                             <div className="text-center">
@@ -38,30 +48,9 @@ export var ReportTypeCheck = React.createClass({
                                         </Link>
                                     </div>
                                 </div>
-                                <div className="col-lg-2 col-md-3 col-sm-6 col-xs-12">
-                                    <div className="assessment-image">
-                                        <Link to={links[1]} className="thumbnail">
-                                            <img src={require('app/images/gen.png')} alt="..."/>
-                                            <div className="text-center">
-                                                <strong>
-                                                    General</strong>
-                                            </div>
-                                        </Link>
-                                    </div>
-                                </div>
                             </div>
                             <div className="row">
-                                <div className="col-lg-2 col-md-3 col-sm-6 col-xs-12 col-md-offset-2  col-lg-offset-3">
-                                    <div className="assessment-image">
-                                        <Link to={links[2]} className="thumbnail">
-                                            <img src={require('app/images/gd.png')} alt="..."/>
-                                            <div className="caption text-center">
-                                                Growth And Development
-                                            </div>
-                                        </Link>
-                                    </div>
-                                </div>
-                                <div className="col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                                <div className="col-lg-2 col-md-3 col-sm-6 col-xs-12 col-md-offset-3 col-lg-offset-4">
                                     <div className="assessment-image">
                                         <Link to={links[3]} className="thumbnail">
                                             <img src={require('app/images/vs.png')} alt="..."/>
@@ -92,3 +81,16 @@ export var ReportTypeCheck = React.createClass({
 });
 
 export default Redux.connect()(ReportTypeCheck);
+
+
+// <div className="col-lg-2 col-md-3 col-sm-6 col-xs-12">
+//     <div className="assessment-image">
+//         <Link to={links[1]} className="thumbnail">
+//             <img src={require('app/images/gen.png')} alt="..."/>
+//             <div className="text-center">ZDS
+//                 <strong>
+//                     General</strong>
+//             </div>
+//         </Link>
+//     </div>
+// </div>

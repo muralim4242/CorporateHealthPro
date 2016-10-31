@@ -17,7 +17,7 @@ export var ReportView = React.createClass({
                 return (<Dental/>);
             } else if (this.props.params["assName"] === "Hearing") {
                 return (<Hearing/>);
-            } else if (this.props.params["assName"] === "Growth And Development") {
+            } else if (this.props.params["assName"] === "Basic Health") {
                 return (<GrowthAndDevelopment/>);
             } else if (this.props.params["assName"] === "General") {
                 return (<General/>);
@@ -131,9 +131,24 @@ export var ReportView = React.createClass({
                             <div className="row text-center">
                                 {reportTypeDetail()}
                             </div>
-
-                            <div className="row text-center">
-
+                            <h3 className="bg-primary text-center">Status</h3>
+                            <div className="row">
+                                <div className="col-md-12 text-center">
+                                    <div className="img-thumbnail">
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            <strong className="btn-success">Excellent</strong>
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            <strong className="btn-warning">Good</strong>
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            <strong className="btn-danger">Poor</strong>
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div className="panel-footer">

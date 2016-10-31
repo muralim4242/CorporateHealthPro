@@ -4,10 +4,45 @@ import * as Redux from 'react-redux';
 import * as actions from 'actions';
 
 export var Dental = React.createClass({
-    onTeathClickHandler: (e) => {
+    componentDidMount() {
+        var teath = document.getElementsByClassName('teath');
+        for (var i = 0; i < teath.length; i++) {
+            teath[i].addEventListener("click", this.onTeathClickHandler);
+        }
+    },
+    hexc(colorval) {
+        var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+        delete(parts[0]);
+        for (var i = 1; i <= 3; ++i) {
+            parts[i] = parseInt(parts[i]).toString(16);
+            if (parts[i].length == 1)
+                parts[i] = '0' + parts[i];
+            }
+        return '#' + parts.join('');
+    },
+    onTeathClickHandler(e) {
         var element = document.getElementsByClassName(e.target.className.split(' ')[1]);
-        console.log(document.getElementsByClassName(e.target.className.split(' ')[1]));
-
+        var color = undefined;
+        if (element[0].style.backgroundColor) {
+            color = this.hexc(element[0].style.backgroundColor);
+        }
+        if (!color) {
+            element[0].style.backgroundColor = "#ffa500";
+        } else if (color === "#ffa500") {
+            element[0].style.backgroundColor = "#ff0000";
+        } else if (color === "#ff0000") {
+            element[0].style.backgroundColor = "#ffff00";
+        } else if (color === "#ffff00") {
+            element[0].style.backgroundColor = "#000000";
+        } else if (color === "#000000") {
+            element[0].style.backgroundColor = "#ffc0cb";
+        } else if (color === "#ffc0cb") {
+            element[0].style.backgroundColor = "#008000";
+        } else if (color === "#008000") {
+            element[0].style.backgroundColor = "#a52a2a";
+        } else {
+            element[0].style.backgroundColor = ""
+        }
     },
     render() {
         return (
@@ -34,7 +69,7 @@ export var Dental = React.createClass({
                         </tr>
                         <tr>
                             <th>
-                                Indicate if cross-bite
+                                Does the Employee have any Bad Breathe?
                             </th>
                             <td>
                                 <label className="radio-inline">
@@ -64,7 +99,7 @@ export var Dental = React.createClass({
                         </tr>
                         <tr>
                             <th>
-                                Is the student in the habit of thumb sucking?
+                                Does the Employee have any Bleeding gums?
                             </th>
                             <td>
                                 <label className="radio-inline">
@@ -79,7 +114,7 @@ export var Dental = React.createClass({
                         </tr>
                         <tr>
                             <th>
-                                Does the student need Dental alignment correction?
+                                Does the Employee have any Sensitivity problem?
                             </th>
                             <td>
                                 <label className="radio-inline">
@@ -94,7 +129,52 @@ export var Dental = React.createClass({
                         </tr>
                         <tr>
                             <th>
-                                Indications to be checked by the dentist?
+                                Does the Employee have any Discoloured or Yellowish teeth?
+                            </th>
+                            <td>
+                                <label className="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                    Yes
+                                </label>
+                                <label className="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" value="No"/>
+                                    No
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Does the Employee have Smoking habit?
+                            </th>
+                            <td>
+                                <label className="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                    Yes
+                                </label>
+                                <label className="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" value="No"/>
+                                    No
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Does the Employee use any Mouth wash?
+                            </th>
+                            <td>
+                                <label className="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                    Yes
+                                </label>
+                                <label className="radio-inline">
+                                    <input type="radio" name="inlineRadioOptions" value="No"/>
+                                    No
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Any RefeCaries Toothist?
                             </th>
                             <td>
                                 <label className="radio-inline">
@@ -114,7 +194,7 @@ export var Dental = React.createClass({
                     <div className="col-md-6">
                         <div className="dental">
                             <img src={require('app/images/jaws.png')} className="img-thumbnail"></img>
-                            <div className="teath teath-one" onClick={this.onTeathClickHandler}></div>
+                            <div className="teath teath-one"></div>
                             <div className="teath teath-two"></div>
                             <div className="teath teath-three"></div>
                             <div className="teath teath-four"></div>
@@ -157,28 +237,28 @@ export var Dental = React.createClass({
                                         Capped Tooth
                                     </th>
                                     <td style={{
-                                        background: "#FF00CC"
+                                        background: "#ffa500"
                                     }}></td>
                                 </tr>
                                 <tr>
                                     <th>
-                                        Cap Fallen
+                                        Bleeding Gums
                                     </th>
                                     <td style={{
-                                        background: "#0000FF"
+                                        background: "#ff0000"
                                     }}></td>
                                 </tr>
                                 <tr>
                                     <th>
-                                        Capped Tooth
+                                        Stains & Calculus
                                     </th>
                                     <td style={{
-                                        background: "#FFFF00"
+                                        background: "#ffff00"
                                     }}></td>
                                 </tr>
                                 <tr>
                                     <th>
-                                        Capped Tooth
+                                        Caries Tooth
                                     </th>
                                     <td style={{
                                         background: "#000000"
@@ -186,18 +266,36 @@ export var Dental = React.createClass({
                                 </tr>
                                 <tr>
                                     <th>
-                                        Capped Tooth
+                                        Tooth upon Tooth
                                     </th>
                                     <td style={{
-                                        background: "#FF6600"
+                                        background: "#ffc0cb"
+                                    }}></td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Fractured tooth
+                                    </th>
+                                    <td style={{
+                                        background: "#008000"
+                                    }}></td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Non vital tooth
+                                    </th>
+                                    <td style={{
+                                        background: "#a52a2a"
                                     }}></td>
                                 </tr>
                             </tbody>
                         </table>
 
                         <div className="row text-center">
-                            <h3 className="bg-primary">Comments</h3>
-                            <textarea className="form-control"></textarea>
+                            <div className="col-md-12">
+                                <h3 className="bg-primary">Comments</h3>
+                                <textarea className="form-control"></textarea>
+                            </div>
                         </div>
                     </div>
                 </div>

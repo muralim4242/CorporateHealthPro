@@ -29,7 +29,7 @@ export var Dental = React.createClass({
                         </tr>
                         <tr>
                             <th>
-                                Indicate if cross-bite
+                                Does the Employee have any Bad Breathe?
                             </th>
                             <td>
                                 No
@@ -37,7 +37,7 @@ export var Dental = React.createClass({
                         </tr>
                         <tr>
                             <th>
-                                Is the student using dental braises?
+                                Does the Employee have any Tooth Pain?
                             </th>
                             <td>
                                 No
@@ -45,7 +45,7 @@ export var Dental = React.createClass({
                         </tr>
                         <tr>
                             <th>
-                                Is the student in the habit of thumb sucking?
+                                Does the Employee have any Bleeding gums?
                             </th>
                             <td>
                                 No
@@ -53,7 +53,7 @@ export var Dental = React.createClass({
                         </tr>
                         <tr>
                             <th>
-                                Does the student need Dental alignment correction?
+                                Does the Employee have any Sensitivity problem?
                             </th>
                             <td>
                                 Yes
@@ -61,7 +61,31 @@ export var Dental = React.createClass({
                         </tr>
                         <tr>
                             <th>
-                                Indications to be checked by the dentist?
+                                Does the Employee have any Discoloured or Yellowish teeth?
+                            </th>
+                            <td>
+                                Yes
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Does the Employee have Smoking habit?
+                            </th>
+                            <td>
+                                Yes
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Does the Employee use any Mouth wash?
+                            </th>
+                            <td>
+                                Yes
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Any Referral to dentist?
                             </th>
                             <td>
                                 Yes
@@ -117,28 +141,28 @@ export var Dental = React.createClass({
                                         Capped Tooth
                                     </th>
                                     <td style={{
-                                        background: "#FF00CC"
+                                        background: "#ffa500"
                                     }}></td>
                                 </tr>
                                 <tr>
                                     <th>
-                                        Cap Fallen
+                                        Bleeding Gums
                                     </th>
                                     <td style={{
-                                        background: "#0000FF"
+                                        background: "#ff0000"
                                     }}></td>
                                 </tr>
                                 <tr>
                                     <th>
-                                        Capped Tooth
+                                        Stains & Calculus
                                     </th>
                                     <td style={{
-                                        background: "#FFFF00"
+                                        background: "#ffff00"
                                     }}></td>
                                 </tr>
                                 <tr>
                                     <th>
-                                        Capped Tooth
+                                        Caries Tooth
                                     </th>
                                     <td style={{
                                         background: "#000000"
@@ -146,20 +170,38 @@ export var Dental = React.createClass({
                                 </tr>
                                 <tr>
                                     <th>
-                                        Capped Tooth
+                                        Tooth upon Tooth
                                     </th>
                                     <td style={{
-                                        background: "#FF6600"
+                                        background: "#ffc0cb"
+                                    }}></td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Fractured tooth
+                                    </th>
+                                    <td style={{
+                                        background: "#008000"
+                                    }}></td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Non vital tooth
+                                    </th>
+                                    <td style={{
+                                        background: "#a52a2a"
                                     }}></td>
                                 </tr>
                             </tbody>
                         </table>
 
                         <div className="row text-center">
-                            <h3 className="bg-primary">Comments</h3>
-                            <p>
-                                Refer to dentist
-                            </p>
+                            <div className="col-md-12">
+                                <h3 className="bg-primary">Comments</h3>
+                                <p>
+                                    Refer to dentist
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

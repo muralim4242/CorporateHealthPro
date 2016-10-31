@@ -7,106 +7,224 @@ export var GrowthAndDevelopment = React.createClass({
     render() {
         return (
             <div>
-                <h1 className="bg-primary">Growth And Development Detail</h1>
+                <h1 className="bg-primary">Basic Health Detail</h1>
                 <div className="row">
                     <div className="col-md-12">
-                        <table className="table table-bordered">
+                        <table className="table table-bordered text-left">
                             <tbody>
                                 <tr>
                                     <th>
-                                        Squint</th>
-                                    <td>No</td>
+                                        Height</th>
+                                    <td><input type="text" className="form-control"/>
+                                    </td>
                                     <th>
-                                        Conjunctiva</th>
-                                    <td>No</td>
+                                        Weight</th>
+                                    <td><input type="text" className="form-control"/></td>
                                 </tr>
                                 <tr>
                                     <th>
-                                        Cornea</th>
-                                    <td>No</td>
+                                        BMI</th>
+                                    <td><input type="text" className="form-control"/></td>
                                     <th>
 
-                                        Is there any white pupil?</th>
-                                    <td>No</td>
-                                </tr>
-
-                                <tr>
-                                    <th>
-                                        Is the eye wandering?</th>
-                                    <td>No</td>
-                                    <th>
-                                        Is the student color blind??</th>
-                                    <td>No</td>
+                                        GRBS/PPBS</th>
+                                    <td><input type="text" className="form-control"/></td>
                                 </tr>
 
                                 <tr>
                                     <th>
-                                        Is the student night blind?</th>
-                                    <td>No</td>
+                                        Blood Pressure</th>
+                                    <td><input type="text" className="form-control"/></td>
                                     <th>
-                                        Is the student suffering from Ocular alignment (Squint)?</th>
-                                    <td>Yes</td>
-                                </tr>
-
-                                <tr>
-                                    <th>
-                                        Is the student wearing spectacles or lens?</th>
-                                    <td>Yes</td>
-                                    <th>
-                                        Is there red or watery crust in the eye?</th>
-                                    <td>Yes</td>
-                                </tr>
-
-                                <tr>
-                                    <th>
-                                        Is the student rubbing eyes frequently?</th>
-                                    <td>Yes</td>
-                                    <th>
-                                        Is the student unusually sensitive to bright light?</th>
-                                    <td>Yes</td>
-                                </tr>
-
-                                <tr>
-                                    <th>
-                                        Does the student suffer from nausea while studying?</th>
-                                    <td>Yes</td>
-                                    <th>
-                                        Does the student suffer from headache after or while reading?</th>
-                                    <td>Yes</td>
-                                </tr>
-
-                                <tr>
-                                    <th>
-                                        Is the student thrusting his head forward or backward while looking at distant object?</th>
-                                    <td>Yes</td>
-                                    <th>
-                                        Is the student turning or tilting the head to one side while reading?</th>
-                                    <td>Yes</td>
-                                </tr>
-
-                                <tr>
-                                    <th>
-                                        Is the student placing the head close to book while reading?</th>
-                                    <td>Yes</td>
-                                    <th>
-                                        Does the student suffer from blurred vision or double image?</th>
-                                    <td>Yes</td>
-                                </tr>
-
-                                <tr>
-                                    <th>
-                                        Indication for consultation with an Ophthalmologist?</th>
-                                    <td>Yes</td>
+                                        ECG</th>
+                                    <td>
+                                      <input type="text" className="form-control"/>
+                                        <input type="file" className="form-control"/>
+                                        Upload Image
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
                 <div className="row">
-                    <h2 className="bg-primary">
-                        Comments
-                    </h2>
-                    <p>Reffer to ENT</p>
+                    <div className="col-md-12">
+                        <table className="table table-bordered text-left">
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        Any breathing problem/ Asthma?</th>
+                                    <td>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            Yes
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="No"/>
+                                            No
+                                        </label>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th>
+                                        Does the employee have any Nasal allergies?</th>
+                                    <td>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            Yes
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="No"/>
+                                            No
+                                        </label>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th>
+                                        Does the employee have any Skin Allergies?</th>
+                                    <td>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            Yes
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="No"/>
+                                            No
+                                        </label>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <th>
+                                        Does the employee Smoke?</th>
+                                    <td>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            Yes
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="No"/>
+                                            No
+                                        </label>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Does the employee consume Alcohol?</th>
+                                    <td>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            Yes
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="No"/>
+                                            No
+                                        </label>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th>
+                                        Do you experience Swelling in any body parts (abdomen, leg, hand)?</th>
+                                    <td>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            Yes
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="No"/>
+                                            No
+                                        </label>
+                                        <input type="text" className="form-control"/></td>
+                                </tr>
+
+                                <tr>
+                                    <th>
+                                        History of any head injury?</th>
+                                    <td>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            Yes
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="No"/>
+                                            No
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Are you Under any medication or treatment?</th>
+                                    <td>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            Yes
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="No"/>
+                                            No
+                                        </label>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th>
+                                        Does the employee has any Hunger problem?</th>
+                                    <td>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            Yes
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="No"/>
+                                            No
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Does the Employee has normal Sleep?</th>
+                                    <td>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            Yes
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="No"/>
+                                            No
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Does the employee has any Cardiac problem?</th>
+                                    <td>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            Yes
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="No"/>
+                                            No
+                                        </label>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-md-12">
+                        <h2 className="bg-primary">
+                            Comments
+                        </h2 >
+                        <textarea className="form-control"></textarea>
+                    </div>
+
                 </div>
             </div>
         )

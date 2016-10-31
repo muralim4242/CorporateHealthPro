@@ -10,93 +10,211 @@ export var Vission = React.createClass({
                 <h1 className="bg-primary">Vission Detail</h1>
                 <div className="row">
                     <div className="col-md-12">
-                        <table className="table table-bordered">
+                        <table className="table table-bordered text-left">
                             <tbody>
                                 <tr>
                                     <th>
                                         Squint</th>
-                                    <td>No</td>
+                                    <td>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            Yes
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="No"/>
+                                            No
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <th>
                                         Conjunctiva</th>
-                                    <td>No</td>
+                                    <td>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            Yes
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="No"/>
+                                            No
+                                        </label>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>
-                                        Cornea</th>
-                                    <td>No</td>
+                                        Color vision</th>
+                                    <td>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            Abnormal
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="No"/>
+                                            Normal
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <th>
 
-                                        Is there any white pupil?</th>
-                                    <td>No</td>
+                                        Cataract</th>
+                                    <td>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            Yes
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="No"/>
+                                            No
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Pterygium</th>
+                                    <td>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            Yes
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="No"/>
+                                            No
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Glaucoma</th>
+                                    <td>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            Yes
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="No"/>
+                                            No
+                                        </label>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <table className="table table-bordered text-left">
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        Is the employee wearing spectacles or lens?</th>
+                                    <td>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            Yes
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="No"/>
+                                            No
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Is there any red or watery crust in the eye?</th>
+                                    <td>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            Yes
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="No"/>
+                                            No
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Is the Employee rubbing eyes frequently?</th>
+                                    <td>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            Yes
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="No"/>
+                                            No
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Is the Employee unusually sensitive to bright light?</th>
+                                    <td>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            Yes
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="No"/>
+                                            No
+                                        </label>
+                                    </td>
                                 </tr>
 
                                 <tr>
                                     <th>
-                                        Is the eye wandering?</th>
-                                    <td>No</td>
-                                    <th>
-                                        Is the student color blind??</th>
-                                    <td>No</td>
-                                </tr>
+                                        Does the Employee have night blindness?</th>
+                                    <td>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            Yes
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="No"/>
+                                            No
+                                        </label>
+                                    </td>
 
-                                <tr>
-                                    <th>
-                                        Is the student night blind?</th>
-                                    <td>No</td>
-                                    <th>
-                                        Is the student suffering from Ocular alignment (Squint)?</th>
-                                    <td>Yes</td>
                                 </tr>
-
                                 <tr>
                                     <th>
-                                        Is the student wearing spectacles or lens?</th>
-                                    <td>Yes</td>
-                                    <th>
-                                        Is there red or watery crust in the eye?</th>
-                                    <td>Yes</td>
+                                        Does the Employee has headache after working for long time?</th>
+                                    <td>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            Yes
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="No"/>
+                                            No
+                                        </label>
+                                    </td>
                                 </tr>
-
                                 <tr>
                                     <th>
-                                        Is the student rubbing eyes frequently?</th>
-                                    <td>Yes</td>
-                                    <th>
-                                        Is the student unusually sensitive to bright light?</th>
-                                    <td>Yes</td>
+                                        Does the Employee has Discharge from eyes / Sticky eyes?</th>
+                                    <td>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            Yes
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="No"/>
+                                            No
+                                        </label>
+                                    </td>
                                 </tr>
-
                                 <tr>
                                     <th>
-                                        Does the student suffer from nausea while studying?</th>
-                                    <td>Yes</td>
-                                    <th>
-                                        Does the student suffer from headache after or while reading?</th>
-                                    <td>Yes</td>
-                                </tr>
-
-                                <tr>
-                                    <th>
-                                        Is the student thrusting his head forward or backward while looking at distant object?</th>
-                                    <td>Yes</td>
-                                    <th>
-                                        Is the student turning or tilting the head to one side while reading?</th>
-                                    <td>Yes</td>
-                                </tr>
-
-                                <tr>
-                                    <th>
-                                        Is the student placing the head close to book while reading?</th>
-                                    <td>Yes</td>
-                                      <th>
-                                          Does the student suffer from blurred vision or double image?</th>
-                                      <td>Yes</td>
-                                </tr>
-                            
-                                <tr>
-                                    <th>
-                                        Indication for consultation with an Ophthalmologist?</th>
-                                    <td>Yes</td>
+                                        Does The employee referred to ophthalmologist?</th>
+                                    <td>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="Yes"/>
+                                            Yes
+                                        </label>
+                                        <label className="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="No"/>
+                                            No
+                                        </label>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -107,21 +225,23 @@ export var Vission = React.createClass({
                     <div className="col-md-12">
                         <table className="table table-bordered">
                             <thead>
-                                <th>
-                                    EYE
-                                </th>
-                                <th>
-                                    Acurity
-                                </th>
-                                <th>
-                                    Spherical
-                                </th>
-                                <th>
-                                    Cylindrical
-                                </th>
-                                <th>
-                                    Axis
-                                </th>
+                                <tr>
+                                    <th>
+                                        EYE
+                                    </th>
+                                    <th>
+                                        Acurity
+                                    </th>
+                                    <th>
+                                        Spherical
+                                    </th>
+                                    <th>
+                                        Cylindrical
+                                    </th>
+                                    <th>
+                                        Axis
+                                    </th>
+                                </tr>
                             </thead>
                             <tbody>
                                 <tr>
@@ -129,16 +249,16 @@ export var Vission = React.createClass({
                                         Left
                                     </th>
                                     <td>
-                                        6/6
+                                        <input type="text" className="form-control"/>
                                     </td>
                                     <td>
-                                        0.76
+                                        <input type="text" className="form-control"/>
                                     </td>
                                     <td>
-                                        0.75
+                                        <input type="text" className="form-control"/>
                                     </td>
                                     <td>
-                                        129
+                                        <input type="text" className="form-control"/>
                                     </td>
                                 </tr>
                                 <tr>
@@ -146,16 +266,16 @@ export var Vission = React.createClass({
                                         Right
                                     </th>
                                     <td>
-                                        6/6
+                                        <input type="text" className="form-control"/>
                                     </td>
                                     <td>
-                                        0.76
+                                        <input type="text" className="form-control"/>
                                     </td>
                                     <td>
-                                        0.75
+                                        <input type="text" className="form-control"/>
                                     </td>
                                     <td>
-                                        129
+                                        <input type="text" className="form-control"/>
                                     </td>
                                 </tr>
                             </tbody>
@@ -163,10 +283,12 @@ export var Vission = React.createClass({
                     </div>
                 </div>
                 <div className="row">
-                    <h2 className="bg-primary">
-                        Comments
-                    </h2>
-                    <p>Reffer to ENT</p>
+                    <div className="col-md-12">
+                        <h2 className="bg-primary">
+                            Comments
+                        </h2>
+                        <textarea className="form-control"></textarea>
+                    </div>
                 </div>
             </div>
         )
