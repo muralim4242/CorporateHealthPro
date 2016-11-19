@@ -9,8 +9,27 @@ import Hearing from 'admin/report/assessmentViewTemplate/user/Hearing';
 import General from 'admin/report/assessmentViewTemplate/user/General';
 import GrowthAndDevelopment from 'admin/report/assessmentViewTemplate/user/GrowthAndDevelopment';
 import Vission from 'admin/report/assessmentViewTemplate/user/Vission';
+//import jsPDF from 'jspdf';
 
 export var ReportView = React.createClass({
+    downloadPdfHandler: function() {
+      //  var doc = new jsPDF()
+        // doc.text('Hello world!', 10, 10)
+        // doc.save('a4.pdf')
+        // We'll make our own renderer to skip this editor
+        // var specialElementHandlers = {
+        //     '#editor': function(element, renderer) {
+        //         return true;
+        //     }
+        // };
+        //
+        // // All units are in the set measurement for the document
+        // // This can be changed to "pt" (points), "mm" (Default), "cm", "in"
+        // doc.fromHTML($('#view').get(0), 15, 15, {
+        //     'width': 170,
+        //     'elementHandlers': specialElementHandlers
+        // });
+    },
     render() {
         var reportTypeDetail = () => {
             if (this.props.params["assName"] === "Dental") {
@@ -26,9 +45,12 @@ export var ReportView = React.createClass({
             }
         };
         return (
-            <div>
+            <div >
+              <div id="editor">
+
+              </div>
                 <ContentBodyHeader path={this.props.location.pathname}/>
-                <div className="col-md-12">
+                <div className="col-md-12" id="view">
                     <div className="panel panel-default">
                         <div className="panel-heading">
                             View
@@ -172,7 +194,7 @@ export var ReportView = React.createClass({
                                             </button>
                                             <ul className="dropdown-menu">
                                                 <li>
-                                                    <a href="#">.pdf</a>
+                                                    <a onClick={this.downloadPdfHandler}>.pdf</a>
                                                 </li>
                                                 <li>
                                                     <a href="#">.xls</a>

@@ -8,6 +8,9 @@ import * as actions from 'actions';
 export var Login = React.createClass({
     onLogin() {
 
+        // if(this.refs.name.value===)
+        // {
+        // }
         hashHistory.push('/Admin');
         // var {dispatch} = this.props;
         //
@@ -16,11 +19,6 @@ export var Login = React.createClass({
     render() {
         return (
           <div>
-            <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                <div className="navbar-header">
-                    <a className="navbar-brand" href="index.html">Corporate Health Pro</a>
-                </div>
-            </nav>
             <div className="row login">
                 <form className="col-lg-4 col-lg-offset-4">
                     <div className="panel panel-default">
@@ -30,11 +28,11 @@ export var Login = React.createClass({
                         <div className="panel-body">
                             <div className="form-group">
                                 <label>Passcode</label>
-                                <input type="Password" className="form-control" placeholder="Passcode"/>
+                                <input type="Password" className="form-control" ref="Passcode" placeholder="Passcode"/>
                             </div>
 
                         </div>
-                        <div className="panel-footer">
+                        <div className="panel-footer text-right">
                             <button type="button" onClick={this.onLogin} className="btn btn-success">Login</button>
                         </div>
                     </div>

@@ -1,36 +1,41 @@
-.assessment-image {
-    background-color: $grey;
-    border-radius: 20%;
-    margin-bottom: 20px;
+.padding-zero {
+    padding: 0;
 
-    a img {
-        -ms-transition: -ms-transform 0.8s ease-in-out;
-        transition: transform 0.8s ease-in-out;
-    }
-
-    .thumbnail {
-        background: transparent;
-        border: 0;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        height: 180px;
-
-        div {
-            color: white;
+    .assessment-image {
+        background-color: $grey;
+        //  border-radius: 20%;
+        //  margin-bottom: 20px;
+        a img {
+            font-size: 10px;
+            -ms-transition: -ms-transform 0.8s ease-in-out;
+            transition: transform 0.8s ease-in-out;
         }
-    }
 
-    a:hover {
-        background: #808080;
-        border-radius: 20%;
-        margin-bottom: 20px;
-        cursor: pointer;
-        text-decoration: none;
+        .thumbnail {
+            background: transparent;
+            border: 0;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            height: 100%;
+            margin-bottom: 0;
 
-        img {
-            transform: rotate(360deg);
-            -ms-transform: rotate(360deg);
-            -webkit-transform: rotate(360deg);
+            div {
+                color: white;
+            }
+        }
+
+        a:hover {
+            background: #808080;
+            //  border-radius: 20%;
+            //  margin-bottom: 20px;
+            cursor: pointer;
+            text-decoration: none;
+
+            img {
+                transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+            }
         }
     }
 }

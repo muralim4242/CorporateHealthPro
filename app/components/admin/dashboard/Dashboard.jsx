@@ -2,9 +2,19 @@ import React from 'react';
 import * as Redux from 'react-redux';
 
 import * as actions from 'actions';
+import CoporateHealthProAPI from 'CoporateHealthProAPI';
 
 export var Dashboard = React.createClass({
+    componentDidMount: function() {
+        var {dispatch} = this.props;
+        CoporateHealthProAPI.getDashboardData().then(function(response) {
+            dispatch(actions.setDashboardData(response));
+        }, function(err) {
+            alert(err);
+        });
+    },
     render() {
+        var {companiesCount, usersCount} = this.props;
         return (
             <div>
                 <div className="container-fluid">
@@ -32,7 +42,7 @@ export var Dashboard = React.createClass({
                                         </div>
 
                                         <div className="col-xs-9 text-right">
-                                            <div className="huge">26</div>
+                                            <div className="huge">{companiesCount}</div>
                                             <div>Total Corporate!</div>
                                         </div>
                                     </div>
@@ -49,7 +59,7 @@ export var Dashboard = React.createClass({
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-6">
-                            <div className="panel panel-green">
+                            <div className="panel panel-red">
                                 <div className="panel-heading">
                                     <div className="row">
                                         <div className="col-xs-3">
@@ -57,7 +67,7 @@ export var Dashboard = React.createClass({
                                         </div>
 
                                         <div className="col-xs-9 text-right">
-                                            <div className="huge">18</div>
+                                            <div className="huge">{usersCount}</div>
                                             <div>Total Users</div>
                                         </div>
                                     </div>
@@ -75,15 +85,15 @@ export var Dashboard = React.createClass({
                         </div>
                     </div>
 
-
                 </div>
             </div>
         )
     }
 });
 
-export default Redux.connect()(Dashboard);
-
+export default Redux.connect((state) => {
+    return {companiesCount: state.dashboardData.companiesCount, usersCount: state.dashboardData.usersCount}
+})(Dashboard);
 
 //
 // <div className="page-header">

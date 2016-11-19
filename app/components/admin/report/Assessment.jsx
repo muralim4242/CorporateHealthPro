@@ -26,8 +26,8 @@ export var ReportTypeCheck = React.createClass({
                         </div>
                         <div className="panel-body">
                             <div className="row">
-                                <div className="col-lg-2 col-md-3 col-sm-6 col-xs-12 col-md-offset-3 col-lg-offset-4">
-                                    <div className="assessment-image">
+                                <div className="col-lg-2 col-md-3 col-sm-4 col-xs-5 col-md-offset-3 col-sm-offset-2 col-xs-offset-1 col-lg-offset-4 padding-zero">
+                                    <div className="assessment-image" style={{background:"#423D24"}}>
                                         <Link to={links[2]} className="thumbnail">
                                             <img src={require('app/images/gen.png')} alt="..."/>
                                             <div className="caption text-center">
@@ -36,11 +36,11 @@ export var ReportTypeCheck = React.createClass({
                                         </Link>
                                     </div>
                                 </div>
-                                <div className="col-lg-2 col-md-3 col-sm-6 col-xs-12">
-                                    <div className="assessment-image">
+                                <div className="col-lg-2 col-md-3 col-sm-4 col-xs-5 padding-zero">
+                                    <div className="assessment-image" style={{background:"#66A329"}}>
                                         <Link to={links[0]} className="thumbnail">
                                             <img src={require('app/images/dt.png')} alt="..."/>
-                                            <div className="text-center">
+                                            <div className="caption text-center">
                                                 <strong>
                                                     Dental
                                                 </strong>
@@ -50,8 +50,8 @@ export var ReportTypeCheck = React.createClass({
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col-lg-2 col-md-3 col-sm-6 col-xs-12 col-md-offset-3 col-lg-offset-4">
-                                    <div className="assessment-image">
+                                <div className="col-lg-2 col-md-3 col-sm-4 col-xs-5 col-md-offset-3 col-sm-offset-2 col-xs-offset-1 col-lg-offset-4 padding-zero">
+                                    <div className="assessment-image" style={{background:"#80FF00"}}>
                                         <Link to={links[3]} className="thumbnail">
                                             <img src={require('app/images/vs.png')} alt="..."/>
                                             <div className="caption text-center">
@@ -60,8 +60,8 @@ export var ReportTypeCheck = React.createClass({
                                         </Link>
                                     </div>
                                 </div>
-                                <div className="col-lg-2 col-md-3 col-sm-6 col-xs-12">
-                                    <div className="assessment-image">
+                                <div className="col-lg-2 col-md-3 col-sm-4 col-xs-5 padding-zero">
+                                    <div className="assessment-image" style={{background:"#B81414"}}>
                                         <Link to={links[4]} className="thumbnail">
                                             <img src={require('app/images/hr.png')} alt="..."/>
                                             <div className="caption text-center">

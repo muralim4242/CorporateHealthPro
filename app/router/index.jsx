@@ -4,6 +4,8 @@ import {Route, Router, IndexRoute, hashHistory, browserHistory} from 'react-rout
 import Login from 'Login';
 
 import CorporateHealthProApp from 'CorporateHealthProApp';
+import CorporateHealthProAppForDoctor from 'CorporateHealthProAppForDoctor';
+import CorporateHealthProAppForUser from 'CorporateHealthProAppForUser';
 
 import Dashboard from 'admin/dashboard/Dashboard';
 
@@ -102,6 +104,26 @@ export default(
                 </Route>
                 <Route path="/Admin/Profile" component={Profile}/>
                 <IndexRoute component={Dashboard}/>
+            </Route>
+            <Route path="/Doctor" component={CorporateHealthProAppForDoctor}>
+                <IndexRoute component={SelectCompanyAndCamp}/>
+                <Route path="/Doctor/Report" component={Reports}>
+                    <Route path="/Doctor/Report/:corpId/:campId/Create/Assessment" component={Assessment}/>
+                    <Route path="/Doctor/Report/:corpId/:campId/Create/Assessment/:assName/List" component={ReportCreateList}/>
+                    <Route path="/Doctor/Report/:corpId/:campId/Create/Assessment/:assName/Add" component={ReportAdd}/>
+                </Route>
+                <Route path="/Doctor/Profile" component={Profile}/>
+            </Route>
+
+            <Route path="/User" component={CorporateHealthProAppForUser}>
+                <IndexRoute component={CorporateListForUsersAdd}/>
+                <Route path="/User/Users" component={Users}>
+                    <Route path="/User/Users/Coporate/:corId/List" component={CorporateUList}/>
+                    <Route path="/User/Users/Coporate/:corId/Add" component={CorporateUAdd}/>
+                    <Route path="/User/Users/Coporate/:corId/Edit/:id" component={CorporateUAdd}/>
+                    <Route path="/User/Users/Coporate/:corId/View/:id" component={CorporateUView}/>
+                </Route>
+                <Route path="/User/Profile" component={Profile}/>
             </Route>
             <IndexRoute component={Login}/>
         </Route>

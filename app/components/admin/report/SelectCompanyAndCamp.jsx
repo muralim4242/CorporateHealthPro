@@ -10,7 +10,9 @@ export var SelectCompanyAndCamp = React.createClass({
         // if (this.refs.searchText.value != "") {
         //     hashHistory.push('/Admin/Camp/List');
         // }
-        hashHistory.push('/Admin/Report/1/1/ReportCheck')
+
+  //      console.log(this.props.location.pathname.split("/")[2]);
+      hashHistory.push('/Admin/Report/1/1/ReportCheck')
     },
     render() {
         return (

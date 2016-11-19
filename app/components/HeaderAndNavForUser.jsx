@@ -5,7 +5,7 @@ import * as Redux from 'react-redux';
 
 import * as actions from 'actions';
 
-export var HeaderAndNav = React.createClass({
+export var HeaderAndNavForUser = React.createClass({
     onLogoutHandler: (e) => {
         hashHistory.push('/');
     },
@@ -48,37 +48,7 @@ export var HeaderAndNav = React.createClass({
                         </li>
                     </ul>
 
-                    <div className="collapse navbar-collapse navbar-ex1-collapse">
-                        <ul className="nav navbar-nav side-nav bg-cust">
-                            <li>
-                                <IndexLink to="/Admin" activeClassName="active">
-                                    <i className="glyphicon glyphicon-dashboard"></i>
-                                    {" "}
-                                    Dashboard</IndexLink>
-
-                            </li>
-                            <li>
-                                <Link to='/Admin/Corporate/List' activeClassName="active">
-                                    <i className="glyphicon glyphicon-briefcase"></i>
-                                    {" "}Corporate</Link>
-                            </li>
-                            <li>
-                                <Link to='/Admin/Users/UserCheck' activeClassName="active">
-                                    <i className="glyphicon glyphicon-user"></i>
-                                    {" "}User</Link>
-                            </li>
-
-                            <li>
-                                <Link to='/Admin/Camp/SelectCompany' activeClassName="active">
-                                    <i className="glyphicon glyphicon-th-large"></i>{" "}Camp</Link>
-
-                            </li>
-                            <li>
-                                <Link to='/Admin/Report/SelectCompanyAndCamp' activeClassName="active">
-                                    <i className="glyphicon glyphicon-list-alt"></i>{" "}Report</Link>
-                            </li>
-                        </ul>
-                    </div>
+                
                 </nav>
 
             </div>
@@ -86,7 +56,7 @@ export var HeaderAndNav = React.createClass({
     }
 });
 
-export default Redux.connect()(HeaderAndNav);
+export default Redux.connect()(HeaderAndNavForUser);
 
 // <span className="icon-bar"></span>
 // <span className="icon-bar"></span>

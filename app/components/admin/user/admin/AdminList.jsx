@@ -4,8 +4,20 @@ import * as Redux from 'react-redux';
 import * as actions from 'actions';
 var {Link} = require("react-router");
 import ContentBodyHeader from 'common/ContentBodyHeader';
+import CoporateHealthProAPI from 'CoporateHealthProAPI';
 
 export var AdminList = React.createClass({
+      componentDidMount: function() {
+        var {dispatch} = this.props;
+        CoporateHealthProAPI.getUserData('admin').then(function(response) {
+      //      console.log(response);
+            
+            //    console.log(dispatch(actions.setCorporateData(response)));
+         //   dispatch(actions.setCorporateData(response));
+        }, function(err) {
+       //     alert(err);
+        });
+    },
     render() {
         return (
             <div>

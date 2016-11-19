@@ -11,8 +11,8 @@ export var ContentBodyHeader = React.createClass({
               <div className="row">
                   <div className="col-lg-12">
                       <h1 className="page-header">{pathSplit[2]}</h1>
-                      <ol className="breadcrumb">
-                          <li className="active">
+                      <ol className="breadcrumb" style={{background:"#8e44ad",color:"white"}}>
+                          <li className="active" style={{color:"white"}}>
                               <i className="glyphicon glyphicon-user"></i>
                               {" "+pathSplit[2] +" / "+((pathSplit[3])?pathSplit[3]+" / ":"") +((pathSplit[4])?pathSplit[4]+" / ":"")+((pathSplit[5])?pathSplit[5]+" / ":"")+((pathSplit[6])?pathSplit[6]+" / ":"")}
                           </li>

@@ -4,6 +4,7 @@ import * as Redux from 'react-redux';
 import * as actions from 'actions';
 
 
+
 export var Corporate = React.createClass({
     render() {
         return (
