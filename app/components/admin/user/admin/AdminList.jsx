@@ -7,18 +7,56 @@ import ContentBodyHeader from 'common/ContentBodyHeader';
 import CoporateHealthProAPI from 'CoporateHealthProAPI';
 
 export var AdminList = React.createClass({
-      componentDidMount: function() {
+    componentDidMount: function() {
         var {dispatch} = this.props;
         CoporateHealthProAPI.getUserData('admin').then(function(response) {
-      //      console.log(response);
-            
-            //    console.log(dispatch(actions.setCorporateData(response)));
-         //   dispatch(actions.setCorporateData(response));
+            //      console.log(response);
+    //        console.log(dispatch(actions.setCorporateData(response)));
+            dispatch(actions.setUserData(response));
         }, function(err) {
-       //     alert(err);
+            alert(err);
         });
     },
     render() {
+      var {list} = this.props;
+      //    console.log(this.props);
+  //    debugger;
+ //        console.log(list);
+      var renderList = function() {
+          if (!list) {
+              return (
+                  <tr>
+                      <td className="text-center" colSpan="8">No users data</td>
+                  </tr>
+              );
+          }
+
+          return list.map((user) => {
+              return (
+
+                <tr key={user.userId}>
+                    <td>{user.userId}</td>
+                    <td>
+                        {user.firstName +" "+user.lastName}
+                    </td>
+                    <td>{user.roleName}</td>
+                    <td>{user.userAdditionalInfo?user.userAdditionalInfo.emailId:null}</td>
+                    <td>{user.userAdditionalInfo?user.userAdditionalInfo.mobileNo:null}</td>
+                    <td>
+                        <Link to={'/Admin/Users/Admin/View/'+user.userId} className="btn btn-success btn-sm">
+                            View</Link>
+                    </td>
+                    <td>
+                        <Link to={'/Admin/Users/Admin/Edit/'+user.userId} className="btn btn-warning btn-sm">
+                            Edit</Link>
+                    </td>
+                    <td>
+                        <button type="button" className="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                    </td>
+                </tr>
+              )
+          })
+      };
         return (
             <div>
                 <ContentBodyHeader path={this.props.location.pathname}/>
@@ -54,26 +92,7 @@ export var AdminList = React.createClass({
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>01</td>
-                                        <td>
-                                            Murali M
-                                        </td>
-                                        <td>Admin</td>
-                                        <td>murlaim4242@gmail.com</td>
-                                        <td>7795929033</td>
-                                        <td>
-                                            <Link to='/Admin/Users/Admin/View/1' className="btn btn-success btn-sm">
-                                                View</Link>
-                                        </td>
-                                        <td>
-                                            <Link to='/Admin/Users/Admin/Edit/1' className="btn btn-warning btn-sm">
-                                                Edit</Link>
-                                        </td>
-                                        <td>
-                                            <button type="button" className="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal">Delete</button>
-                                        </td>
-                                    </tr>
+                                    {renderList()}
                                 </tbody>
                             </table>
                         </div>
@@ -85,4 +104,6 @@ export var AdminList = React.createClass({
     }
 });
 
-export default Redux.connect()(AdminList);
+export default Redux.connect((state) => {
+    return state.user
+})(AdminList);

@@ -37,10 +37,16 @@ export var setIndCorporateData = (corporate) => {
     }
 }
 
-export var setCorporateData = (list) => {
+export var setUserData = (list) => {
     return {
       type:'SET_USER_DATA',
       list
     }
 }
 
+export var setIndUserData = (user) => {
+    return {
+      type:'SET_IND_USER_DATA',
+      user
+    }
+}

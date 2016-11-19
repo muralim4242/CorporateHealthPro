@@ -39,7 +39,7 @@ export var CorporateList = React.createClass({
                         </td>
                         <td>{corporate.name}</td>
                         <td>{corporate.representativeName}</td>
-                       
+
                         <td>
                             <Link to={'/Admin/Corporate/View/' + corporate.id} className="btn btn-success btn-sm">
                                 View</Link>

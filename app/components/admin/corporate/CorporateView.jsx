@@ -11,7 +11,7 @@ export var CorporateView = React.createClass({
         var {dispatch} = this.props;
      //   console.log(this.props.params.id);
         CoporateHealthProAPI.getCorporateDataById(this.props.params.id).then(function(response) {
-          //  console.log(response);
+        //    console.log(response);
             //      console.log(actions.setIndCorporateData(response));
             dispatch(actions.setIndCorporateData(response));
         }, function(err) {
@@ -52,13 +52,13 @@ export var CorporateView = React.createClass({
                                 <div className="col-lg-8">
                                     <br/>
                                     <br/>
-                                   
+
                                     <div className="row">
                                         <div className="col-lg-2">
                                             <label>Address</label>
                                         </div>
                                         <div className="col-lg-6">
-                                           
+
                                             {corporate.address?corporate.address.address:null}<br/>
                                             {corporate.address?corporate.address.pincode:null}
 
@@ -79,7 +79,7 @@ export var CorporateView = React.createClass({
             }
             else
             {
-                return (<strong className="text-center">No Data</strong>);
+                return (<strong className="text-center"></strong>);
             }
         };
         return (

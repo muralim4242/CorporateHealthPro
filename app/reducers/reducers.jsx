@@ -49,13 +49,14 @@ export var userReducer = (state = {
     user: {}
 }, action) => {
     switch (action.type) {
-        case 'SET_CORPORATE_DATA':
+        case 'SET_USER_DATA':
             return {list: action.list};
             //      return Object.assign({}, state, {list: action.list});
             break;
-        case 'SET_IND_CORPORATE_DATA':
-            return {corporate: action.user};
+        case 'SET_IND_USER_DATA':
+            return {user: action.user};
             break;
+
         default:
             return state;
     }

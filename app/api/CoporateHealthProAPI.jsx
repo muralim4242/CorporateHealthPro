@@ -7,11 +7,11 @@ var instanceBeforeLogin = axios.create({
         'Api-Key': 'GAGAN'
     }
 });
-var config = {
-    headers: {
-        'Api-Key': '238997726a78c49dc869d7e006e1353f'
-    }
-};
+// var config = {
+//     headers: {
+//         'Api-Key': '238997726a78c49dc869d7e006e1353f'
+//     }
+// };
 var instanceAfterLogin = axios.create({
     baseURL: 'http://lowcost-env.9mjwkk3raa.us-west-2.elasticbeanstalk.com/webapi',
     timeout: 1000,
@@ -52,6 +52,13 @@ module.exports = {
     },
       getUserData: function(user) {
         return instanceAfterLogin.get('/users/'+user).then(function(response) {
+            return response.data;
+        }).catch(function(response) {
+            throw new Error(response.data.message);
+        });
+    },
+    getUserDataById: function(user,id) {
+        return instanceAfterLogin.get('/users/'+user+'/'+id).then(function(response) {
             return response.data;
         }).catch(function(response) {
             throw new Error(response.data.message);
