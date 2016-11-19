@@ -4,9 +4,55 @@ import * as Redux from 'react-redux';
 import * as actions from 'actions';
 var {Link} = require("react-router");
 import ContentBodyHeader from 'common/ContentBodyHeader';
+import CoporateHealthProAPI from 'CoporateHealthProAPI';
 
-export var CorporateList = React.createClass({
+export var CorporateUsersList = React.createClass({
+  componentDidMount: function() {
+      var {dispatch} = this.props;
+      CoporateHealthProAPI.getUsersForCorporate(this.props.params.corId).then(function(response) {
+        console.log(response);
+          dispatch(actions.setUserList(response));
+      }, function(err) {
+          alert(err);
+      });
+  },
     render() {
+      var {list} = this.props;
+      //    console.log(this.props);
+  //    debugger;
+ //        console.log(list);
+      var renderList = function() {
+          if (!list) {
+              return (
+                  <tr>
+                      <td className="text-center" colSpan="8">No users for this  company</td>
+                  </tr>
+              );
+          }
+
+          return list.map((user) => {
+              return (
+                  <tr key={user.userId}>
+                      <td>{user.userId}</td>
+                      <td>{user.firstName}</td>
+                      <td>{user.roleName}</td>
+                      <td>{user.userAdditionalInfo.emailId}</td>
+                      <td>{user.userAdditionalInfo.mobileNo}</td>
+                        <td>
+                            <Link to={'/Admin/Users/Coporate/'+user.userAdditionalInfo.company.id+'/View/'+user.userId} className="btn btn-success btn-sm">
+                                View</Link>
+                        </td>
+                        <td>
+                            <Link to={'/Admin/Users/Coporate/'+user.userAdditionalInfo.company.id+'/Edit/'+user.userId} className="btn btn-warning btn-sm">
+                                Edit</Link>
+                        </td>
+                        <td>
+                            <button type="button" className="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                        </td>
+                  </tr>
+              )
+          })
+      };
         return (
             <div>
                 <ContentBodyHeader path={this.props.location.pathname}/>
@@ -23,7 +69,7 @@ export var CorporateList = React.createClass({
                                 </div>
                                 <div className="col-lg-3">
                                     <div className="pull-right">
-                                        <Link to='/Admin/Users/Coporate/1/Add' className="btn btn-primary">
+                                        <Link to={'/Admin/Users/Coporate/'+this.props.params.corId+'/Add'} className="btn btn-primary">
                                             Add</Link>
                                         <Link to='/Admin/Users/Corporate/CorporateListForUsersAdd' className="btn btn-success">
                                             Back</Link>
@@ -43,30 +89,11 @@ export var CorporateList = React.createClass({
                                         <th>Mobile No</th>
                                         <th>View</th>
                                         <th>Edit</th>
-                                        <th>Delet</th>
+                                        <th>Delete</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>01</td>
-                                        <td>
-                                            Murali M
-                                        </td>
-                                        <td>Admin</td>
-                                        <td>murlaim4242@gmail.com</td>
-                                        <td>7795929033</td>
-                                        <td>
-                                            <Link to='/Admin/Users/Coporate/1/View/1' className="btn btn-success btn-sm">
-                                                View</Link>
-                                        </td>
-                                        <td>
-                                            <Link to='/Admin/Users/Coporate/1/Edit/1' className="btn btn-warning btn-sm">
-                                                Edit</Link>
-                                        </td>
-                                        <td>
-                                            <button type="button" className="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal">Delete</button>
-                                        </td>
-                                    </tr>
+                                    {renderList()}
                                 </tbody>
                             </table>
                         </div>
@@ -77,4 +104,6 @@ export var CorporateList = React.createClass({
     }
 });
 
-export default Redux.connect()(CorporateList);
+export default Redux.connect((state) => {
+    return state.user
+})(CorporateUsersList);

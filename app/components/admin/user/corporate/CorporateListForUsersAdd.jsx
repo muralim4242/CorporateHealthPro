@@ -4,9 +4,49 @@ import * as Redux from 'react-redux';
 import * as actions from 'actions';
 var {Link} = require("react-router");
 import ContentBodyHeader from 'common/ContentBodyHeader';
+import CoporateHealthProAPI from 'CoporateHealthProAPI';
 
 export var CorporateListForUsersAdd = React.createClass({
+  componentDidMount: function() {
+      var {dispatch} = this.props;
+      CoporateHealthProAPI.getCorporateData().then(function(response) {
+          //    console.log(dispatch(actions.setCorporateData(response)));
+          dispatch(actions.setCorporateData(response));
+      }, function(err) {
+          alert(err);
+      });
+  },
     render() {
+      var {list} = this.props;
+      //    console.log(this.props);
+  //    debugger;
+ //        console.log(list);
+      var renderList = function() {
+          if (!list) {
+              return (
+                  <tr>
+                      <td className="text-center" colSpan="8">No corporate data</td>
+                  </tr>
+              );
+          }
+
+          return list.map((corporate) => {
+              return (
+                  <tr key={corporate.id}>
+                      <td>{corporate.id}</td>
+                      <td>
+                          <img width="50px" src={corporate.companyLogoPath} className="img-responsiv"></img>
+                      </td>
+                      <td>{corporate.name}</td>
+                      <td>{corporate.representativeName}</td>
+                        <td>
+                            <Link to={'/Admin/Users/Coporate/' + corporate.id + '/List'} className="btn btn-success btn-sm">
+                                Add Users</Link>
+                        </td>
+                  </tr>
+              )
+          })
+      };
         return (
             <div>
                 <ContentBodyHeader path={this.props.location.pathname}/>
@@ -31,24 +71,11 @@ export var CorporateListForUsersAdd = React.createClass({
                                         <th>Log</th>
                                         <th>Name</th>
                                         <th>MD/HR</th>
-                                        <th>Email ID</th>
                                         <th>Add Users</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>01</td>
-                                        <td>
-                                            <img src="" className="img-responsiv"></img>
-                                        </td>
-                                        <td>hhhhh</td>
-                                        <td>jhj</td>
-                                        <td>tharu@gmail.com</td>
-                                        <td>
-                                            <Link to='/Admin/Users/Coporate/1/List' className="btn btn-success btn-sm">
-                                                Add Users</Link>
-                                        </td>
-                                    </tr>
+                                    {renderList()}
                                 </tbody>
                             </table>
                         </div>
@@ -59,4 +86,6 @@ export var CorporateListForUsersAdd = React.createClass({
     }
 });
 
-export default Redux.connect()(CorporateListForUsersAdd);
+export default Redux.connect((state) => {
+    return state.corporate
+})(CorporateListForUsersAdd);

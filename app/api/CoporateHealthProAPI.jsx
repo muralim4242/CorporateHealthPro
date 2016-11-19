@@ -50,6 +50,15 @@ module.exports = {
             throw new Error(response.data.message);
         });
     },
+    getUsersForCorporate: function(companyId) {
+            console.log("Hi");
+        return instanceAfterLogin.get('/companies/'+companyId+'/users').then(function(response) {
+                console.log("got output");
+            return response.data;
+        }).catch(function(response) {
+            throw new Error(response.data.message);
+        });
+    },
       getUserData: function(user) {
         return instanceAfterLogin.get('/users/'+user).then(function(response) {
             return response.data;
