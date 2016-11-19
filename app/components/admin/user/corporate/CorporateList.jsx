@@ -11,7 +11,7 @@ export var CorporateUsersList = React.createClass({
       var {dispatch} = this.props;
       CoporateHealthProAPI.getUsersForCorporate(this.props.params.corId).then(function(response) {
         console.log(response);
-          dispatch(actions.setUserList(response));
+          dispatch(actions.setUserData(response));
       }, function(err) {
           alert(err);
       });
