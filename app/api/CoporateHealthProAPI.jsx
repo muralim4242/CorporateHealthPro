@@ -59,7 +59,7 @@ module.exports = {
             throw new Error(response.data.message);
         });
     },
-      getUserData: function(user) {
+    getUserData: function(user) {
         return instanceAfterLogin.get('/users/'+user).then(function(response) {
             return response.data;
         }).catch(function(response) {
@@ -68,6 +68,20 @@ module.exports = {
     },
     getUserDataById: function(user,id) {
         return instanceAfterLogin.get('/users/'+user+'/'+id).then(function(response) {
+            return response.data;
+        }).catch(function(response) {
+            throw new Error(response.data.message);
+        });
+    },
+    getCampData: function(cId) {
+        return instanceAfterLogin.get('companies/'+cId+'/medicalCamps').then(function(response) {
+            return response.data;
+        }).catch(function(response) {
+            throw new Error(response.data.message);
+        });
+    },
+    getCampDataById: function(cId,id) {
+        return instanceAfterLogin.get('companies/'+cId+'/medicalCamps/'+id).then(function(response) {
             return response.data;
         }).catch(function(response) {
             throw new Error(response.data.message);

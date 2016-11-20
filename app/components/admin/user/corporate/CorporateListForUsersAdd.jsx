@@ -18,9 +18,31 @@ export var CorporateListForUsersAdd = React.createClass({
   },
     render() {
       var {list} = this.props;
+      console.log(this.props.location.pathname.split('/')[2]);
+      var path=this.props.location.pathname.split('/')[2];
+    //  var pathSplit=this.props.path.split('/');
+    //  console.log(pathSplit[3]);
+      // var path='/Admin/Users/Coporate/' + corporate.id + '/List';
+      // if(this.props.location.pathname.split('/')[2]=="Users")
+      // {
+      //
+      // }
+
       //    console.log(this.props);
   //    debugger;
  //        console.log(list);
+      var findPath=function(corId)
+      {
+        if(path=="Users")
+        {
+            return '/Admin/Users/Coporate/' + corId + '/List';
+        }
+        else {
+            return '/Admin/Camp/' + corId + '/List';
+        }
+        //  console.log(corId);
+      };
+
       var renderList = function() {
           if (!list) {
               return (
@@ -40,7 +62,7 @@ export var CorporateListForUsersAdd = React.createClass({
                       <td>{corporate.name}</td>
                       <td>{corporate.representativeName}</td>
                         <td>
-                            <Link to={'/Admin/Users/Coporate/' + corporate.id + '/List'} className="btn btn-success btn-sm">
+                            <Link to={findPath(corporate.id)} className="btn btn-success btn-sm">
                                 Add Users</Link>
                         </td>
                   </tr>

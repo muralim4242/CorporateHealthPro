@@ -61,3 +61,21 @@ export var userReducer = (state = {
             return state;
     }
 };
+
+export var campReducer = (state = {
+    list: [],
+    camp: {}
+}, action) => {
+    switch (action.type) {
+        case 'SET_CAMP_DATA':
+            return {list: action.list};
+            //      return Object.assign({}, state, {list: action.list});
+            break;
+        case 'SET_IND_CAMP_DATA':
+            return {camp: action.camp};
+            break;
+
+        default:
+            return state;
+    }
+};

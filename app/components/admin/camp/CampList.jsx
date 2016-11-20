@@ -4,10 +4,59 @@ import * as Redux from 'react-redux';
 import * as actions from 'actions';
 var {Link} = require("react-router");
 import ContentBodyHeader from 'common/ContentBodyHeader';
+import CoporateHealthProAPI from 'CoporateHealthProAPI';
 
 export var CampList = React.createClass({
-    render() {
-        return (
+componentDidMount: function() {
+      var {dispatch} = this.props;
+      CoporateHealthProAPI.getCampData(this.props.params.corId).then(function(response) {
+          //    console.log(dispatch(actions.setCorporateData(response)));
+          dispatch(actions.setCampData(response));
+      }, function(err) {
+          alert(err);
+      });
+  },
+  render() {
+      var {list} = this.props;
+      var corId=this.props.params.corId;
+      //    console.log(this.props);
+  //    debugger;
+ //        console.log(list);
+      var renderBody = function() {
+          if (!list) {
+              return (
+                  <tr>
+                      <td className="text-center" colSpan="8">No camp data</td>
+                  </tr>
+              );
+          }
+
+          return list.map((camp) => {
+              return (
+                <tr key={camp.id}>
+                    <td>{camp.id}</td>
+                    <td>
+                        {camp.name}
+                    </td>
+                    <td>{camp.startDate}</td>
+                    <td>{camp.endDate}</td>
+                    <td>
+                        <Link to={'/Admin/Camp/'+corId+'/View/'+camp.id} className="btn btn-success btn-sm">
+                            View</Link>
+                    </td>
+                    <td>
+                      <Link to={'/Admin/Camp/'+corId+'/Edit/'+camp.id} className="btn btn-warning btn-sm">
+                          Edit</Link>
+                      </td>
+                    <td>
+                        <button type="button" className="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                    </td>
+                </tr>
+              )
+          })
+      };
+
+       return (
             <div>
               <ContentBodyHeader path={this.props.location.pathname}/>
                 <div className="col-lg-8">
@@ -45,25 +94,7 @@ export var CampList = React.createClass({
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>01</td>
-                                        <td>
-                                            oct camp
-                                        </td>
-                                        <td>12-10-2016</td>
-                                        <td>30-10-2016</td>
-                                        <td>
-                                            <Link to='/Admin/Camp/1/View/1' className="btn btn-success btn-sm">
-                                                View</Link>
-                                        </td>
-                                        <td>
-                                          <Link to='/Admin/Camp/1/Edit/1' className="btn btn-warning btn-sm">
-                                              Edit</Link>
-                                          </td>
-                                        <td>
-                                            <button type="button" className="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal">Delete</button>
-                                        </td>
-                                    </tr>
+                                  {renderBody()}
                                 </tbody>
                             </table>
                         </div>
@@ -75,4 +106,6 @@ export var CampList = React.createClass({
     }
 });
 
-export default Redux.connect()(CampList);
+export default Redux.connect((state)=>{
+  return state.camp
+})(CampList);

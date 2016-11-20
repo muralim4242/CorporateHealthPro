@@ -6,11 +6,13 @@ import {hashHistory} from 'react-router';
 import ContentBodyHeader from 'common/ContentBodyHeader';
 
 export var SelectCompany = React.createClass({
-    onClickHandler: () => {
+    onClickHandler: function() {
         // if (this.refs.searchText.value != "") {
         //     hashHistory.push('/Admin/Camp/1/List');
         // }
-        hashHistory.push('/Admin/Camp/1/List');
+        //      hashHistory.push('/Admin/Camp/1/List');
+
+    //    alert(this.refs.searchText.value);
     },
     render() {
         return (

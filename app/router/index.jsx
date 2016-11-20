@@ -28,6 +28,7 @@ import Camps from 'admin/camp/Camps';
 import CampList from 'admin/camp/CampList';
 import CampAdd from 'admin/camp/CampAdd';
 import CampView from 'admin/camp/CampView';
+import CorporateListForCampsAdd from 'admin/user/corporate/CorporateListForUsersAdd'
 import SelectCompany from 'admin/camp/SelectCompany';
 
 import Reports from 'admin/report/Reports';
@@ -83,7 +84,8 @@ export default(
                     <Route path="/Admin/Users/Coporate/:corId/View/:id" component={CorporateUView}/>
                 </Route>
                 <Route path="/Admin/Camp" component={Camps}>
-                    <Route path="/Admin/Camp/SelectCompany" component={SelectCompany}/>
+                    <Route path="/Admin/Camp/SelectCompany" component={CorporateListForCampsAdd}/>
+                      // <Route path="/Admin/Camp/SelectCompany" component={SelectCompany}/>
                     <Route path="/Admin/Camp/:corId/List" component={CampList}/>
                     <Route path="/Admin/Camp/:corId/Add" component={CampAdd}/>
                     <Route path="/Admin/Camp/:corId/Edit/:id" component={CampAdd}/>

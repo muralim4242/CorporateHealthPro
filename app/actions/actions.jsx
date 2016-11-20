@@ -50,3 +50,17 @@ export var setIndUserData = (user) => {
       user
     }
 }
+
+export var setCampData = (list) => {
+    return {
+      type:'SET_CAMP_DATA',
+      list
+    }
+}
+
+export var setIndCampData = (camp) => {
+    return {
+      type:'SET_IND_CAMP_DATA',
+      camp
+    }
+}
