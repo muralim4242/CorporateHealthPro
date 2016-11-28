@@ -2,12 +2,13 @@ import React from 'react';
 import * as Redux from 'react-redux';
 
 import * as actions from 'actions';
+import {blue500} from 'material-ui/styles/colors';
 
 export var Hearing = React.createClass({
     render() {
         return (
             <div>
-                <h1 className="bg-primary">Hearing Detail</h1>
+                <h1 style={{backgroundColor:blue500,padding:"5px" }}>Hearing Detail</h1>
                 <div className="row">
                     <div className="col-md-6">
                         <table className="table-custom">
@@ -383,7 +384,7 @@ export var Hearing = React.createClass({
                         </table>
                     </div>
                     <div className="col-md-6 text-center">
-                        <h2 className="bg-primary">
+                        <h2 style={{backgroundColor:blue500,padding:"5px" }}>
                             Comments
                         </h2>
                         <p>Reffer to ENT</p>

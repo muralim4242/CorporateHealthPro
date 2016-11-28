@@ -2,12 +2,13 @@ import React from 'react';
 import * as Redux from 'react-redux';
 
 import * as actions from 'actions';
+import {blue500} from 'material-ui/styles/colors';
 
 export var Vission = React.createClass({
     render() {
         return (
             <div>
-                <h1 className="bg-primary">Vission Detail</h1>
+                <h1 style={{backgroundColor:blue500,padding:"5px" }}>Vission Detail</h1>
                 <div className="row">
                     <div className="col-md-12">
                         <table className="table table-bordered">
@@ -142,7 +143,7 @@ export var Vission = React.createClass({
                     </div>
                 </div>
                 <div className="row">
-                    <h2 className="bg-primary">
+                    <h2 style={{backgroundColor:blue500,padding:"5px" }}>
                         Comments
                     </h2>
                     <p>Reffer to ENT</p>

@@ -5,6 +5,9 @@ import * as actions from 'actions';
 import {Link} from 'react-router';
 import ContentBodyHeader from 'common/ContentBodyHeader';
 import CoporateHealthProAPI from 'CoporateHealthProAPI';
+import {Card,  CardText, CardActions} from 'material-ui/Card';
+import RaisedButton from 'material-ui/RaisedButton';
+
 
 export var AdminView = React.createClass({
   componentDidMount: function() {
@@ -14,12 +17,13 @@ export var AdminView = React.createClass({
         //  console.log(response);
           //      console.log(actions.setIndCorporateData(response));
          dispatch(actions.setIndUserData(response));
+           dispatch({type:"SET_REFRESH_INDICATOR_STATE",refreshIndicator:"hide"});
       }, function(err) {
           alert(err);
       });
   },
   render() {
-      var {user} = this.props;
+      var {user,dispatch} = this.props;
  //     var {address}=user;
   //    console.log(user);
   //    console.log(address);
@@ -133,34 +137,28 @@ export var AdminView = React.createClass({
         return (
             <div>
                 <ContentBodyHeader path={this.props.location.pathname}/>
-                <div className="col-lg-8">
-                    <div className="panel panel-default">
-                        <div className="panel-heading">
-                            View
-                        </div>
-                        <div className="panel-body">
-                            {renderBody()}
-                        </div>
-                        <div className="panel-footer">
-                            <div className="row">
-                                <div className="col-lg-2 ">
-
-                                  <Link to='/Admin/Users/Admin/List' className="btn btn-primary pull-left">
-                                    Back</Link>
-
-                                </div>
-                                <div className="col-lg-4 col-lg-offset-6">
-                                    <div className="pull-right">
-                                      <Link to={'/Admin/Users/Admin/Edit/'+ this.props.params.id} className="btn btn-success">
-                                        Edit</Link>
-                                        <button type="button" className="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <Card>
+                    <CardText>
+                          {renderBody()}
+                    </CardText>
+                    <CardActions>
+                      <div className="row">
+                          <div className="col-lg-2 ">
+                              <Link to='/Admin/Users/Admin/List' className="pull-left">
+                                  <RaisedButton primary={true} label="Back"/></Link>
+                          </div>
+                          <div className="col-lg-4 col-lg-offset-6">
+                              <div className="pull-right">
+                                  <Link to={'Admin/Users/Admin/Edit/'+ this.props.params.id}>
+                                        <RaisedButton  label="Edit"/></Link>
+                                        <RaisedButton secondary={true} onTouchTap={() => {
+                                            dispatch({type: "SET_DELETE_MODAL_STATE", isDeleteModalOpen: true})
+                                        }}  label="Delete"/>
+                              </div>
+                          </div>
+                      </div>
+                    </CardActions>
+                </Card>
             </div>
         )
     }
@@ -169,3 +167,33 @@ export var AdminView = React.createClass({
 export default Redux.connect((state) => {
     return state.user;
 })(AdminView);
+
+
+// <div className="col-lg-8">
+//     <div className="panel panel-default">
+//         <div className="panel-heading">
+//             View
+//         </div>
+//         <div className="panel-body">
+//             {renderBody()}
+//         </div>
+//         <div className="panel-footer">
+//             <div className="row">
+//                 <div className="col-lg-2 ">
+//
+//                   <Link to='/Admin/Users/Admin/List' className="btn btn-primary pull-left">
+//                     Back</Link>
+//
+//                 </div>
+//                 <div className="col-lg-4 col-lg-offset-6">
+//                     <div className="pull-right">
+//                       <Link to={'/Admin/Users/Admin/Edit/'+ this.props.params.id} className="btn btn-success">
+//                         Edit</Link>
+//                         <button type="button" className="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
+//                     </div>
+//
+//                 </div>
+//             </div>
+//         </div>
+//     </div>
+// </div>

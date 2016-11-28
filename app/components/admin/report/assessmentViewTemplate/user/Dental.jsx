@@ -2,12 +2,13 @@ import React from 'react';
 import * as Redux from 'react-redux';
 
 import * as actions from 'actions';
+import {blue500} from 'material-ui/styles/colors';
 
 export var Dental = React.createClass({
     render() {
         return (
             <div>
-                <h2 className="bg-primary">Dental Detail</h2>
+                <h2 style={{backgroundColor:blue500,padding:"5px" }}>Dental Detail</h2>
 
                 <table className="table table-bordered text-left">
                     <tbody>
@@ -197,7 +198,7 @@ export var Dental = React.createClass({
 
                         <div className="row text-center">
                             <div className="col-md-12">
-                                <h3 className="bg-primary">Comments</h3>
+                                <h3 style={{backgroundColor:blue500,padding:"5px" }}>Comments</h3>
                                 <p>
                                     Refer to dentist
                                 </p>

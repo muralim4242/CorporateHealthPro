@@ -3,88 +3,73 @@ import * as Redux from 'react-redux';
 
 import * as actions from 'actions';
 import CoporateHealthProAPI from 'CoporateHealthProAPI';
+import ContentBodyHeader from 'common/ContentBodyHeader';
+import {Tabs, Tab} from 'material-ui/Tabs';
+
+
+const styles = {
+    headline: {
+        fontSize: 40,
+        paddingTop: 16,
+        marginBottom: 12,
+        fontWeight: 400,
+        textAlign:"center"
+    }
+};
+
 
 export var Dashboard = React.createClass({
     componentDidMount: function() {
         var {dispatch} = this.props;
+        // dispatch(actions.setDashboardData(CoporateHealthProAPI.getDashboardData()));
         CoporateHealthProAPI.getDashboardData().then(function(response) {
+      //      console.log(response+":response");
             dispatch(actions.setDashboardData(response));
+            dispatch({type:"SET_REFRESH_INDICATOR_STATE",refreshIndicator:"hide"})
         }, function(err) {
             alert(err);
         });
     },
     render() {
         var {companiesCount, usersCount} = this.props;
+        const renderBody=function()
+        {
+          if(companiesCount&&usersCount)
+          {
+              return (
+                <Tabs>
+                    <Tab label="Corporates">
+                        <div>
+                            <h2 style={styles.headline}>{companiesCount}</h2>
+
+                        </div>
+                    </Tab>
+                    <Tab label="Users">
+                        <div>
+                            <h2 style={styles.headline}>{usersCount}</h2>
+
+                        </div>
+                    </Tab>
+
+                </Tabs>
+              )
+          }
+          else {
+            return (
+              <div  className="text-center">
+
+                  
+              </div>
+            )
+          }
+        };
         return (
+
             <div>
                 <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <h1 className="page-header">Dashboard</h1>
-                            <ol className="breadcrumb">
-                                <li className="active">
-                                    <i className="glyphicon glyphicon-user"></i>
-                                    Dashboard
-                                </li>
-                            </ol>
-                        </div>
-                    </div>
-                    <div className="page-header">
-                        <h2>Statics</h2>
-                    </div>
-                    <div className="row">
-                        <div className="col-lg-3 col-md-6">
-                            <div className="panel panel-primary">
-                                <div className="panel-heading">
-                                    <div className="row">
-                                        <div className="col-xs-3">
-                                            <i className="glyphicon glyphicon-user"></i>
-                                        </div>
+                    <ContentBodyHeader path={this.props.location.pathname}/>
 
-                                        <div className="col-xs-9 text-right">
-                                            <div className="huge">{companiesCount}</div>
-                                            <div>Total Corporate!</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#">
-                                    <div className="panel-footer">
-                                        <span className="pull-left">View Details</span>
-                                        <span className="pull-right">
-                                            <i className="glyphicon glyphicon-user"></i>
-                                        </span>
-                                        <div className="clearfix"></div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-md-6">
-                            <div className="panel panel-red">
-                                <div className="panel-heading">
-                                    <div className="row">
-                                        <div className="col-xs-3">
-                                            <i className="glyphicon glyphicon-user"></i>
-                                        </div>
-
-                                        <div className="col-xs-9 text-right">
-                                            <div className="huge">{usersCount}</div>
-                                            <div>Total Users</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#">
-                                    <div className="panel-footer">
-                                        <span className="pull-left">View Details</span>
-                                        <span className="pull-right">
-                                            <i className="glyphicon glyphicon-user"></i>
-                                        </span>
-                                        <div className="clearfix"></div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
+                    {renderBody()}
                 </div>
             </div>
         )
@@ -161,6 +146,62 @@ export default Redux.connect((state) => {
 //                     <div className="col-xs-9 text-right">
 //                         <div className="huge">26</div>
 //                         <div>New Comments!</div>
+//                     </div>
+//                 </div>
+//             </div>
+//             <a href="#">
+//                 <div className="panel-footer">
+//                     <span className="pull-left">View Details</span>
+//                     <span className="pull-right">
+//                         <i className="glyphicon glyphicon-user"></i>
+//                     </span>
+//                     <div className="clearfix"></div>
+//                 </div>
+//             </a>
+//         </div>
+//     </div>
+// </div>
+
+// <div className="page-header">
+//     <h2>Statics</h2>
+// </div>
+// <div className="row">
+//     <div className="col-lg-3 col-md-6">
+//         <div className="panel panel-primary">
+//             <div className="panel-heading">
+//                 <div className="row">
+//                     <div className="col-xs-3">
+//                         <i className="glyphicon glyphicon-user"></i>
+//                     </div>
+//
+//                     <div className="col-xs-9 text-right">
+//                         <div className="huge">{companiesCount}</div>
+//                         <div>Total Corporate!</div>
+//                     </div>
+//                 </div>
+//             </div>
+//             <a href="#">
+//                 <div className="panel-footer">
+//                     <span className="pull-left">View Details</span>
+//                     <span className="pull-right">
+//                         <i className="glyphicon glyphicon-user"></i>
+//                     </span>
+//                     <div className="clearfix"></div>
+//                 </div>
+//             </a>
+//         </div>
+//     </div>
+//     <div className="col-lg-3 col-md-6">
+//         <div className="panel panel-red">
+//             <div className="panel-heading">
+//                 <div className="row">
+//                     <div className="col-xs-3">
+//                         <i className="glyphicon glyphicon-user"></i>
+//                     </div>
+//
+//                     <div className="col-xs-9 text-right">
+//                         <div className="huge">{usersCount}</div>
+//                         <div>Total Users</div>
 //                     </div>
 //                 </div>
 //             </div>

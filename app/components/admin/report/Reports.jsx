@@ -40,7 +40,7 @@ export var Camps = React.createClass({
                                 </div>
                                 <div className="modal-body">
                                     <div className="form-group">
-                                        <label for="exampleInputFile">File input</label>
+                                        <label htmlFor="exampleInputFile">File input</label>
                                         <input type="file" id="exampleInputFile"/>
                                         <p className="help-block">Upload only excel file.</p>
                                     </div>

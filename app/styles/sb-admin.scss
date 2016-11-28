@@ -5,7 +5,7 @@
  */
 /* Global Styles */
 body {
-    margin-top: 100px;
+  //  margin-top: 100px;
 //    background-color: #8e44ad;
 }
 
@@ -14,12 +14,16 @@ body {
     border-color: #16a085;
 }
 
+.side-bar {
+  margin-top: 64px;
+}
+
 .bg-cust a {
     color: white;
 }
 @media(min-width:768px) {
     body {
-        margin-top: 50px;
+  //      margin-top: 50px;
     }
 }
 
