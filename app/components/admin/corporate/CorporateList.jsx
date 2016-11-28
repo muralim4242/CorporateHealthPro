@@ -110,8 +110,8 @@ export var CorporateList = React.createClass({
 
             return list.map((corporate) => {
                 return (
-                  <div>
-                  <Card key={corporate.id}>
+                  <div  key={corporate.id}>
+                  <Card>
                     <CardHeader  title={corporate.name}
 
                                   avatar={corporate.companyLogoPath}>
@@ -156,7 +156,7 @@ export var CorporateList = React.createClass({
                 <ContentBodyHeader path={this.props.location.pathname}/>
                   <Card>
                     <CardHeader>
-                      <Link to='/Admin/Users/Admin/Add'>
+                      <Link to='/Admin/Corporate/Add'>
                           <FloatingActionButton primary={true} mini={true} className="pull-right" style={style}>
                               <ContentAdd/>
                           </FloatingActionButton>
@@ -169,11 +169,10 @@ export var CorporateList = React.createClass({
                                  <table className="table">
                                      <thead>
                                          <tr>
-                                             <th>S.No</th>
-                                             <th>Name</th>
-                                             <th>Role</th>
-
-                                             <th>Mobile No</th>
+                                           <th>S.No</th>
+                                           <th>Log</th>
+                                           <th>Name</th>
+                                           <th>MD/HR</th>
                                              <th>View</th>
                                              <th>Edit</th>
                                              <th>Delet</th>
