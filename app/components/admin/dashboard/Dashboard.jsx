@@ -5,6 +5,8 @@ import * as actions from 'actions';
 import CoporateHealthProAPI from 'CoporateHealthProAPI';
 import ContentBodyHeader from 'common/ContentBodyHeader';
 import {Tabs, Tab} from 'material-ui/Tabs';
+import {blue500} from 'material-ui/styles/colors';
+import {Card,  CardText, CardActions,CardHeader} from 'material-ui/Card';
 
 
 const styles = {
@@ -37,28 +39,66 @@ export var Dashboard = React.createClass({
           if(companiesCount&&usersCount)
           {
               return (
-                <Tabs>
-                    <Tab label="Corporates">
-                        <div>
-                            <h2 style={styles.headline}>{companiesCount}</h2>
 
-                        </div>
-                    </Tab>
-                    <Tab label="Users">
-                        <div>
-                            <h2 style={styles.headline}>{usersCount}</h2>
 
-                        </div>
-                    </Tab>
+                <div className="row">
 
-                </Tabs>
+                    <div className="col-lg-3 col-md-6">
+                      <Card>
+                        <CardHeader>
+                          <div className="row">
+                              <div className="col-xs-3">
+                                  <i className="glyphicon glyphicon-user"></i>
+                              </div>
+
+                              <div className="col-xs-9 text-right">
+                                  <div className="huge">{companiesCount}</div>
+                                  <div>Total Corporate!</div>
+                              </div>
+                          </div>
+                        </CardHeader>
+                        <CardText>
+                          <span className="pull-left">View Details</span>
+                          <span className="pull-right">
+                              <i className="glyphicon glyphicon-user"></i>
+                          </span>
+                          <div className="clearfix"></div>
+                        </CardText>
+                      </Card>
+                    </div>
+                    <div className="col-lg-3 col-md-6">
+                      <Card>
+                        <CardHeader>
+                          <div className="row">
+                              <div className="col-xs-3">
+                                  <i className="glyphicon glyphicon-user"></i>
+                              </div>
+
+                              <div className="col-xs-9 text-right">
+                                  <div className="huge">{usersCount}</div>
+                                  <div>Total Users!</div>
+                              </div>
+                          </div>
+                        </CardHeader>
+                        <CardText>
+                          <span className="pull-left">View Details</span>
+                          <span className="pull-right">
+                              <i className="glyphicon glyphicon-user"></i>
+                          </span>
+                          <div className="clearfix"></div>
+                        </CardText>
+                      </Card>
+                      
+                    </div>
+                </div>
+
               )
           }
           else {
             return (
               <div  className="text-center">
 
-                  
+
               </div>
             )
           }
@@ -68,7 +108,7 @@ export var Dashboard = React.createClass({
             <div>
                 <div className="container-fluid">
                     <ContentBodyHeader path={this.props.location.pathname}/>
-
+                    <br/>
                     {renderBody()}
                 </div>
             </div>
@@ -217,3 +257,20 @@ export default Redux.connect((state) => {
 //         </div>
 //     </div>
 // </div>
+
+
+// <Tabs>
+//     <Tab label="Corporates">
+//         <div>
+//             <h2 style={styles.headline}>{companiesCount}</h2>
+//
+//         </div>
+//     </Tab>
+//     <Tab label="Users">
+//         <div>
+//             <h2 style={styles.headline}>{usersCount}</h2>
+//
+//         </div>
+//     </Tab>
+//
+// </Tabs>

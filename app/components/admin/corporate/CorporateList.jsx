@@ -53,7 +53,7 @@ export var CorporateList = React.createClass({
                       <td colSpan="7">
                       <div>
                         <CardText className="text-center">
-                        
+
                         </CardText>
                       </div>
                       </td>
@@ -99,6 +99,58 @@ export var CorporateList = React.createClass({
                 )
             })
         };
+        var renderList1 = function() {
+            if (!list.length) {
+                return (
+                  <Card>
+
+                  </Card>
+                );
+            }
+
+            return list.map((corporate) => {
+                return (
+                  <div>
+                  <Card key={corporate.id}>
+                    <CardHeader  title={corporate.name}
+
+                                  avatar={corporate.companyLogoPath}>
+
+                    </CardHeader>
+                    <CardText>
+                          <label>Corporate Id:  </label>{corporate.id}<br/>
+                          <label>Representative Name:  </label>  {corporate.representativeName}
+                    </CardText>
+                    <CardActions >
+                        <div >
+                          <Link to={'/Admin/Corporate/View/' + corporate.id}>
+
+                              <FloatingActionButton mini={true} secondary={true} style={style}>
+                                  <RemoveRedEye/>
+                              </FloatingActionButton>
+                          </Link>
+
+                          <Link to={'/Admin/Corporate/Edit/' + corporate.id}>
+                              <FloatingActionButton mini={true} secondary={true} style={style}>
+                                  <Edit/>
+                              </FloatingActionButton>
+                          </Link>
+
+
+                          <FloatingActionButton onTouchTap={() => {
+                              dispatch({type: "SET_DELETE_MODAL_STATE", isDeleteModalOpen: true})
+                          }} mini={true} secondary={true} style={style} data-toggle="modal" data-target="#deleteModal">
+                              <Delete/>
+                          </FloatingActionButton>
+                          </div>
+                    </CardActions>
+                  </Card>
+                  <br/>
+                  </div>
+
+                )
+            })
+        };
         return (
             <div>
                 <ContentBodyHeader path={this.props.location.pathname}/>
@@ -111,6 +163,8 @@ export var CorporateList = React.createClass({
                       </Link>
                     </CardHeader>
                     <CardText>
+                      <br/>
+                        {renderList1()}
                       <div className="panel-body table-responsive">
                                  <table className="table">
                                      <thead>
