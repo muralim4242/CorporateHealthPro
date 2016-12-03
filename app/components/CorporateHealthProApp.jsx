@@ -20,11 +20,11 @@ const style = {
 
 
 export var CorporateHealthProApp = React.createClass({
-  componentWillMount:function()
-  {
-    var {dispatch}=this.props;
-    dispatch({type:"SET_REFRESH_INDICATOR_STATE",refreshIndicator:"loading"})
-  },
+  // componentWillMount:function()
+  // {
+  //   var {dispatch}=this.props;
+  //   dispatch({type:"SET_REFRESH_INDICATOR_STATE",refreshIndicator:"loading"})
+  // },
     onLogout(e) {
         var {dispatch} = this.props;
         e.preventDefault();
@@ -59,19 +59,38 @@ export var CorporateHealthProApp = React.createClass({
             } />
         ];
       //  const loading=refreshIndicator;
-
+        const renderBody=function()
+        {
+            if(refreshIndicator=="loading")
+            {
+                return (  <div className="text-center">
+                               <div style={style.container}>
+                                   <RefreshIndicator size={80} left={0} top={20} loadingColor="#FF9800" status={refreshIndicator} style={style.refresh}/>
+                               </div>
+                  </div> );
+            }
+            // else {
+            //     return (
+            //       <div className="text-center">
+            //           <div style={style.container}>
+            //               <RefreshIndicator size={80} left={0} top={20} loadingColor="#FF9800" status={refreshIndicator} style={style.refresh}/>
+            //           </div>
+            //       </div>
+            //     )
+            // }
+        };
         return (
             <div>
                 <div>
                     <HeaderAndNav/>
-                    <div>
-                        {props.children}
-                    </div>
-                    <div className="text-center">
-                        <div style={style.container}>
-                            <RefreshIndicator size={80} left={0} top={20} loadingColor="#FF9800" status={refreshIndicator} style={style.refresh}/>
-                        </div>
-                    </div>
+                      
+
+                    <div>{props.children}</div>
+                    {renderBody()}
+
+
+
+
                 </div>
                 <Dialog title="Delete" actions={actions} modal={false} open={isDeleteModalOpen} onRequestClose={() => {
                     dispatch({type: "SET_DELETE_MODAL_STATE", isDeleteModalOpen: false})

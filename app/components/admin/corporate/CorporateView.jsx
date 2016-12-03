@@ -12,6 +12,7 @@ export var CorporateView = React.createClass({
     componentDidMount: function() {
         var {dispatch} = this.props;
         //   console.log(this.props.params.id);
+          dispatch({type:"SET_REFRESH_INDICATOR_STATE",refreshIndicator:"loading"})
         CoporateHealthProAPI.getCorporateDataById(this.props.params.id).then(function(response) {
             //    console.log(response);
             //      console.log(actions.setIndCorporateData(response));

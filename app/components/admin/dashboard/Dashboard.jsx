@@ -24,12 +24,14 @@ export var Dashboard = React.createClass({
     componentDidMount: function() {
         var {dispatch} = this.props;
         // dispatch(actions.setDashboardData(CoporateHealthProAPI.getDashboardData()));
+          dispatch({type:"SET_REFRESH_INDICATOR_STATE",refreshIndicator:"loading"})
         CoporateHealthProAPI.getDashboardData().then(function(response) {
       //      console.log(response+":response");
             dispatch(actions.setDashboardData(response));
             dispatch({type:"SET_REFRESH_INDICATOR_STATE",refreshIndicator:"hide"})
         }, function(err) {
             alert(err);
+              dispatch({type:"SET_REFRESH_INDICATOR_STATE",refreshIndicator:"hide"})
         });
     },
     render() {
@@ -88,7 +90,7 @@ export var Dashboard = React.createClass({
                           <div className="clearfix"></div>
                         </CardText>
                       </Card>
-                      
+
                     </div>
                 </div>
 

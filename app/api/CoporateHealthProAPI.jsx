@@ -91,5 +91,15 @@ module.exports = {
         }).catch(function(response) {
             throw new Error(response.data.message);
         });
+    },
+    addCorporate:function(corporate){
+        return instanceAfterLogin.post('companies',corporate).then(function(response)
+      {
+            return response.data;
+      }).catch(function(response)
+    {
+        throw new Error(response.data.message);
+    });
     }
+
 };

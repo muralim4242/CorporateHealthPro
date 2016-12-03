@@ -7,7 +7,7 @@ export var appReducer = (state = {
 }, action) => {
     switch (action.type) {
         case "SET_REFRESH_INDICATOR_STATE":
-           console.log(action.refreshIndicator);
+        //   console.log(action.refreshIndicator);
             return Object.assign({}, state, {refreshIndicator: action.refreshIndicator});
 
             break;

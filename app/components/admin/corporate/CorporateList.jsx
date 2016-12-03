@@ -33,7 +33,8 @@ const styleB = {
 export var CorporateList = React.createClass({
     componentDidMount: function() {
         var {dispatch} = this.props;
-        CoporateHealthProAPI.getCorporateData().then(function(response) {
+      //    dispatch({type:"SET_REFRESH_INDICATOR_STATE",refreshIndicator:"loading"})
+          CoporateHealthProAPI.getCorporateData().then(function(response) {
             //    console.log(dispatch(actions.setCorporateData(response)));
             dispatch(actions.setCorporateData(response));
               dispatch({type:"SET_REFRESH_INDICATOR_STATE",refreshIndicator:"hide"})
@@ -46,59 +47,59 @@ export var CorporateList = React.createClass({
         //    console.log(this.props);
         //    debugger;
         //        console.log(list);
-        var renderList = function() {
-            if (!list.length) {
-                return (
-                    <tr>
-                      <td colSpan="7">
-                      <div>
-                        <CardText className="text-center">
-
-                        </CardText>
-                      </div>
-                      </td>
-                    </tr>
-                );
-            }
-
-            return list.map((corporate) => {
-                return (
-                    <tr key={corporate.id}>
-                        <td>{corporate.id}</td>
-                        <td>
-                            <img width="50px" src={corporate.companyLogoPath} className="img-responsiv"></img>
-                        </td>
-                        <td>{corporate.name}</td>
-                        <td>{corporate.representativeName}</td>
-
-                        <td>
-                            <Link to={'/Admin/Corporate/View/' + corporate.id}>
-
-                                <FloatingActionButton mini={true} secondary={true} style={style}>
-                                    <RemoveRedEye/>
-                                </FloatingActionButton>
-                            </Link>
-                        </td>
-                        <td>
-                            <Link to={'/Admin/Corporate/Edit/' + corporate.id}>
-                                <FloatingActionButton mini={true} secondary={true} style={style}>
-                                    <Edit/>
-                                </FloatingActionButton>
-                            </Link>
-
-                        </td>
-                        <td>
-                            <FloatingActionButton onTouchTap={() => {
-                                dispatch({type: "SET_DELETE_MODAL_STATE", isDeleteModalOpen: true})
-                            }} mini={true} secondary={true} style={style} data-toggle="modal" data-target="#deleteModal">
-                                <Delete/>
-                            </FloatingActionButton>
-
-                        </td>
-                    </tr>
-                )
-            })
-        };
+        // var renderList = function() {
+        //     if (!list.length) {
+        //         return (
+        //             <tr>
+        //               <td colSpan="7">
+        //               <div>
+        //                 <CardText className="text-center">
+        //
+        //                 </CardText>
+        //               </div>
+        //               </td>
+        //             </tr>
+        //         );
+        //     }
+        //
+        //     return list.map((corporate) => {
+        //         return (
+        //             <tr key={corporate.id}>
+        //                 <td>{corporate.id}</td>
+        //                 <td>
+        //                     <img width="50px" src={corporate.companyLogoPath} className="img-responsiv"></img>
+        //                 </td>
+        //                 <td>{corporate.name}</td>
+        //                 <td>{corporate.representativeName}</td>
+        //
+        //                 <td>
+        //                     <Link to={'/Admin/Corporate/View/' + corporate.id}>
+        //
+        //                         <FloatingActionButton mini={true} secondary={true} style={style}>
+        //                             <RemoveRedEye/>
+        //                         </FloatingActionButton>
+        //                     </Link>
+        //                 </td>
+        //                 <td>
+        //                     <Link to={'/Admin/Corporate/Edit/' + corporate.id}>
+        //                         <FloatingActionButton mini={true} secondary={true} style={style}>
+        //                             <Edit/>
+        //                         </FloatingActionButton>
+        //                     </Link>
+        //
+        //                 </td>
+        //                 <td>
+        //                     <FloatingActionButton onTouchTap={() => {
+        //                         dispatch({type: "SET_DELETE_MODAL_STATE", isDeleteModalOpen: true})
+        //                     }} mini={true} secondary={true} style={style} data-toggle="modal" data-target="#deleteModal">
+        //                         <Delete/>
+        //                     </FloatingActionButton>
+        //
+        //                 </td>
+        //             </tr>
+        //         )
+        //     })
+        // };
         var renderList1 = function() {
             if (!list.length) {
                 return (
@@ -165,24 +166,6 @@ export var CorporateList = React.createClass({
                     <CardText>
                       <br/>
                         {renderList1()}
-                      <div className="panel-body table-responsive">
-                                 <table className="table">
-                                     <thead>
-                                         <tr>
-                                           <th>S.No</th>
-                                           <th>Log</th>
-                                           <th>Name</th>
-                                           <th>MD/HR</th>
-                                             <th>View</th>
-                                             <th>Edit</th>
-                                             <th>Delet</th>
-                                         </tr>
-                                     </thead>
-                                     <tbody>
-                                         {renderList()}
-                                     </tbody>
-                                 </table>
-                             </div>
                     </CardText>
                   </Card>
             </div>
