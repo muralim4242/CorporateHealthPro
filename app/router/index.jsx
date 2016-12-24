@@ -44,6 +44,8 @@ import ReportAdd from 'admin/report/ReportAdd';
 
 import Profile from "admin/Profile";
 
+import Playground from "Playground";
+
 //import firebase from 'app/firebase/';
 
 // var requireLogin = (nextState, replace, next) => {
@@ -127,6 +129,7 @@ export default(
                 </Route>
                 <Route path="/User/Profile" component={Profile}/>
             </Route>
+            <Route path="/Playground" component={Playground}/>
             <IndexRoute component={Login}/>
         </Route>
     </Router>

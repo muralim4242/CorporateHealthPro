@@ -6,6 +6,7 @@ import HeaderAndNav from 'HeaderAndNav';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RefreshIndicator from 'material-ui/RefreshIndicator';
+import Snackbar from 'material-ui/Snackbar';
 
 const style = {
   container: {
@@ -34,7 +35,7 @@ export var CorporateHealthProApp = React.createClass({
     render() {
         var props = this.props;
         const {isDeleteModalOpen} = this.props.corporate;
-        const {refreshIndicator}=this.props.app;
+        const {refreshIndicator,snackbar}=this.props.app;
         const {dispatch}=this.props;
       //  console.log(refreshIndicator);
         const actions = [
@@ -78,12 +79,13 @@ export var CorporateHealthProApp = React.createClass({
             //       </div>
             //     )
             // }
+
         };
         return (
             <div>
                 <div>
                     <HeaderAndNav/>
-                      
+
 
                     <div>{props.children}</div>
                     {renderBody()}
@@ -97,6 +99,13 @@ export var CorporateHealthProApp = React.createClass({
                 }}>
                     The actions in this window were passed in as an array of React objects.
                 </Dialog>
+
+                <Snackbar
+                  open={snackbar.open}
+                  message={snackbar.text}
+                  autoHideDuration={5000}
+                  onRequestClose={this.handleRequestClose}
+                  />
             </div>
         )
     }

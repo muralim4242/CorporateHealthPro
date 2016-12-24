@@ -18,7 +18,7 @@ var instanceBeforeLogin = axios.create({
 
 var instanceAfterLogin = axios.create({
     baseURL: 'http://lowcost-env.9mjwkk3raa.us-west-2.elasticbeanstalk.com/webapi',
-    timeout: 10000,
+//    timeout: 10000,
     headers: {
         'Api-Key': '238997726a78c49dc869d7e006e1353f'
     }
@@ -100,6 +100,16 @@ module.exports = {
     {
         throw new Error(response.data.message);
     });
-    }
+  },
+  addUser:function(user,userData){
+      return instanceAfterLogin.post('users/'+user,userData).then(function(response)
+    {
+        return response.data;
+    }).catch(function(response)
+  {
+      throw new Error(response.data.message);
+  })
+  }
+
 
 };

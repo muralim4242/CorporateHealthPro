@@ -13,7 +13,6 @@ const style = {
     margin: 12
 };
 
-
 export var Profile = React.createClass({
     render() {
         return (
@@ -28,12 +27,10 @@ export var Profile = React.createClass({
                                 <span >hhhh</span>
                             </div>
                             <div className="form-group">
-                                <label>First name</label>
-                                <input type="text" className="form-control" placeholder="FName"/>
+                                <TextField hintText="FNanme" floatingLabelText="Full Name"/>
                             </div>
                             <div className="form-group">
-                                <label>Last Name</label>
-                                <input type="text" className="form-control" placeholder="LName"/>
+                                <TextField hintText="LNanme" floatingLabelText="Last Name"/>
                             </div>
                             <div className="form-group">
                                 <label>Gender</label>
@@ -87,7 +84,7 @@ export var Profile = React.createClass({
                             </div>
                         </CardText>
                         <CardActions>
-                          <RaisedButton label="Update" primary={true} style={style} className="pull-right"/>
+                            <RaisedButton label="Update" primary={true} style={style} className="pull-right"/>
                         </CardActions>
                     </Card>
 

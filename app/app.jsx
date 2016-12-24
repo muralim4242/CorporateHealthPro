@@ -29,7 +29,26 @@ import router from 'app/router/';
 //$(document).foundation();
 
 // App css
-require('style!css!sass!applicationStyles')
+
+// class Provider extends Component {
+//     getChildContext ()
+//     {
+//       return {
+//         store:this.props.store
+//       }
+//     }
+//
+//     render()
+//     {
+//       return this.props.children;
+//     }
+// }
+//
+// Provider.childContextTypes = {
+//   store:React.PropTypes.object
+// }
+
+require('style!css!sass!applicationStyles');
 
 ReactDOM.render(
     <Provider store={store}>

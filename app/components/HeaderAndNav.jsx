@@ -132,6 +132,16 @@ export default Redux.connect((state) => {
     return {auth:state.auth,app:state.app}
 })(HeaderAndNav);
 
+
+// <Link to='/Playground' activeClassName="active" onClick={this.isMenuOpen}>
+//     <MenuItem>
+//
+//         <i className="glyphicon glyphicon-list-alt"></i>
+//         {" "}
+//         Playground
+//
+//     </MenuItem>
+// </Link>
 // <Toggle label="Logged" defaultToggled={true} onToggle={()=>
 //   {
 //     dispatch(actions.logout())

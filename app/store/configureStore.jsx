@@ -1,7 +1,7 @@
 import * as redux from 'redux';
 import thunk from 'redux-thunk';
 
-import {appReducer,authReducer,dashboardReducer,corporateReducer,userReducer,campReducer,reportReducer} from 'reducers'
+import {appReducer,authReducer,dashboardReducer,corporateReducer,userReducer,campReducer,reportReducer,formReducer} from 'reducers'
 
 export var configure = (initialState = {}) => {
   var reducer = redux.combineReducers({
@@ -11,7 +11,8 @@ export var configure = (initialState = {}) => {
     corporate:corporateReducer,
     user:userReducer,
     camp:campReducer,
-    report:reportReducer
+    report:reportReducer,
+    form:formReducer
   });
 
   var store = redux.createStore(reducer, initialState, redux.compose(
