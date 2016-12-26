@@ -37,7 +37,7 @@ export var CorporateListForUsersAdd = React.createClass({
     },
     render() {
         var {list} = this.props;
-        console.log(this.props.location.pathname.split('/')[2]);
+        // console.log(this.props.location.pathname.split('/')[2]);
         var path = this.props.location.pathname.split('/')[2];
         //  var pathSplit=this.props.path.split('/');
         //  console.log(pathSplit[3]);

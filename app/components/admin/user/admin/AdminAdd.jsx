@@ -24,9 +24,12 @@ export var AdminAdd = React.createClass({
         var {dispatch} = this.props;
         if (this.props.params.id) {
 
+            // console.log(this.props.location.pathname.split('/')[3]);
             //   console.log(this.props.params.id);
             dispatch({type: "SET_REFRESH_INDICATOR_STATE", refreshIndicator: "loading"})
-            CoporateHealthProAPI.getUserDataById("admin", this.props.params.id).then(function(response) {
+            CoporateHealthProAPI.getUserDataById(this.props.location.pathname.split('/')[3] == "Corporate"
+                ? "corporate"
+                : "admin", this.props.params.id).then(function(response) {
                 //    console.log(response);
                 //      console.log(actions.setIndCorporateData(response));
                 dispatch({
@@ -84,19 +87,39 @@ export var AdminAdd = React.createClass({
                     }
                 }
             });
+            dispatch({
+                type: "HANDLE_CHANGE",
+                property: "dateOfBirth",
+                value: new Date(),
+                isRequired: true,
+                pattern: ""
+            });
             dispatch({type: "SET_REFRESH_INDICATOR_STATE", refreshIndicator: "hide"})
         }
     },
-    handleChange(e, name,isRequired, pattern) {
+    handleChange(e, name, isRequired, pattern) {
         let {dispatch} = this.props;
         dispatch({type: "HANDLE_CHANGE", property: name, value: e.target.value, isRequired: isRequired, pattern: pattern});
     },
     addAdmin() {
         let {admin, dispatch} = this.props;
-        CoporateHealthProAPI.addUser("admin", admin).then(function(response) {
+        let userType = this.props.location.pathname.split('/')[3];
+        if (userType == "Corporate") {
+            admin = {
+                ...admin,
+                "company": {
+                    "id": this.props.params.corId
+                }
+            };
+        };
+        CoporateHealthProAPI.addUser(this.props.location.pathname.split('/')[3] == "Corporate"
+            ? "corporate"
+            : "admin", admin).then(function(response) {
             alert("successfully added");
             // dispatch({type:"SET_SNACKBAR",snackbar:{open:true,text:"successfully added"}});
-            hashHistory.push("/Admin/Users/Admin/List");
+            hashHistory.push(userType == "Corporate"
+                ? "/Admin/Users/Corporate/" + this.props.params.corId + "/List"
+                : "/Admin/Users/Admin/List");
 
         }, function(err) {
             alert(err);
@@ -105,7 +128,7 @@ export var AdminAdd = React.createClass({
     render() {
         const genders = ['MALE', 'FEMALE'];
         const roles = ["ADMIN", "MANAGER", "DOCTOR"];
-        var {admin, dispatch, fieldErrors,isFormValid} = this.props;
+        var {admin, dispatch, fieldErrors, isFormValid} = this.props;
         var {addAdmin} = this;
         return (
             <div>
@@ -224,7 +247,9 @@ export var AdminAdd = React.createClass({
 
                         </CardText>
                         <CardActions>
-                            <Link to='/Admin/Users/Admin/List'>
+                            <Link to={this.props.location.pathname.split('/')[3] == "Corporate"
+                                ? "/Admin/Users/Corporate/" + this.props.params.corId + "/List"
+                                : "/Admin/Users/Admin/List"}>
                                 <RaisedButton label="Back" secondary={true} style={style}/>
                             </Link>
                             {this.props.params.id

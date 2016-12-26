@@ -56,9 +56,9 @@ module.exports = {
         });
     },
     getUsersForCorporate: function(companyId) {
-        console.log("Hi");
+        // console.log("Hi");
         return instanceAfterLogin.get('/companies/' + companyId + '/users').then(function(response) {
-            console.log("got output");
+            // console.log("got output");
             return response.data;
         }).catch(function(response) {
             throw new Error(response.data.message);

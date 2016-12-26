@@ -81,8 +81,8 @@ export default(
                     <Route path="/Admin/Users/Admin/View/:id" component={AdminView}/>
                     <Route path="/Admin/Users/Corporate/CorporateListForUsersAdd" component={CorporateListForUsersAdd}/>
                     <Route path="/Admin/Users/Corporate/:corId/List" component={CorporateUList}/>
-                    <Route path="/Admin/Users/Corporate/:corId/Add" component={CorporateUAdd}/>
-                    <Route path="/Admin/Users/Corporate/:corId/Edit/:id" component={CorporateUAdd}/>
+                    <Route path="/Admin/Users/Corporate/:corId/Add" component={AdminAdd}/>
+                    <Route path="/Admin/Users/Corporate/:corId/Edit/:id" component={AdminAdd}/>
                     <Route path="/Admin/Users/Corporate/:corId/View/:id" component={CorporateUView}/>
                 </Route>
                 <Route path="/Admin/Camp" component={Camps}>
