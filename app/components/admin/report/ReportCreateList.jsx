@@ -24,7 +24,7 @@ import Download from 'material-ui/svg-icons/file/file-download';
 import Popover from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
-
+import CoporateHealthProAPI from 'CoporateHealthProAPI';
 
 const style = {
     marginRight: 20
@@ -36,14 +36,52 @@ const styleB = {
 
 
 export var ReportCreateList = React.createClass({
+  componentDidMount: function() {
+      var {dispatch} = this.props;
+      CoporateHealthProAPI.getUsersForCorporate(this.props.params.corpId).then(function(response) {
+            dispatch(actions.setUserData(response));
+            dispatch({type:"SET_REFRESH_INDICATOR_STATE",refreshIndicator:"hide"});
+      }, function(err) {
+          alert(err);
+      });
+    },
     render() {
+      var {list,dispatch,params} = this.props;
+      var renderList = function() {
+          if (!list) {
+              return (
+                  <tr>
+                      <td className="text-center" colSpan="8">No users for this company</td>
+                  </tr>
+              );
+          }
+
+          return list.map((user) => {
+              return (
+                  <tr key={user.userId}>
+                      <td>{user.userId}</td>
+                      <td>{user.firstName}</td>
+                      <td>{user.roleName}</td>
+                      <td>{user.userAdditionalInfo.emailId}</td>
+                      <td>{user.userAdditionalInfo.mobileNo}</td>
+                      <td>
+                          <Link to={"/Admin/Report/"+params.corpId+"/"+params.campId+"/Create/Assessment/"+params.assName+"/Add"}>
+                              <FloatingActionButton mini={true} secondary={true} style={style}>
+                                  <ContentAdd/>
+                              </FloatingActionButton>
+                          </Link>
+                      </td>
+                  </tr>
+              )
+          })
+      };
         return (
             <div>
                 <ContentBodyHeader path={this.props.location.pathname}/>
                 <Card>
                 <CardHeader>
 
-                  <Link to="/Admin/Report/1/1/Create/Assessment/List">
+                  <Link to={"/Admin/Report/"+this.props.params.corpId+"/"+this.props.params.campId+"/Create/Assessment"}>
                       <FloatingActionButton secondary={true} mini={true} className="pull-right" style={style}>
                           <ContentBack/>
                       </FloatingActionButton>
@@ -63,19 +101,7 @@ export var ReportCreateList = React.createClass({
                                      </tr>
                                  </thead>
                                  <tbody>
-                                     <tr>
-                                         <td>01</td>
-                                         <td>
-                                             Murali M
-                                         </td>
-                                         <td>Admin</td>
-                                         <td>murlaim4242@gmail.com</td>
-                                         <td>7795929033</td>
-                                         <td>
-                                             <Link to={'/Admin/Report/1/1/Create/Assessment/' + this.props.params["assName"] + '/Add'} >
-                                                 <RaisedButton secondary={true} label="Start"/></Link>
-                                         </td>
-                                     </tr>
+                                        {renderList()}
                                  </tbody>
                              </table>
                          </div>
@@ -87,7 +113,9 @@ export var ReportCreateList = React.createClass({
     }
 });
 
-export default Redux.connect()(ReportCreateList);
+export default Redux.connect((state) => {
+    return state.user
+})(ReportCreateList);
 
 //
 // <div className="col-lg-10">

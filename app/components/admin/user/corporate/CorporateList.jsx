@@ -45,9 +45,6 @@ export var CorporateUsersList = React.createClass({
     },
     render() {
         var {list,dispatch} = this.props;
-        //    console.log(this.props);
-        //    debugger;
-        //        console.log(list);
         var renderList = function() {
             if (!list) {
                 return (

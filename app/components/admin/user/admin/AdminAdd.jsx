@@ -127,7 +127,8 @@ export var AdminAdd = React.createClass({
     },
     render() {
         const genders = ['MALE', 'FEMALE'];
-        const roles = ["ADMIN", "MANAGER", "DOCTOR"];
+        const rolesForAdmin = ["ADMIN", "MANAGER", "DOCTOR","DATAENTRY"];
+
         var {admin, dispatch, fieldErrors, isFormValid} = this.props;
         var {addAdmin} = this;
         return (
