@@ -65,7 +65,7 @@ export var ReportCreateList = React.createClass({
                       <td>{user.userAdditionalInfo.emailId}</td>
                       <td>{user.userAdditionalInfo.mobileNo}</td>
                       <td>
-                          <Link to={"/Admin/Report/"+params.corpId+"/"+params.campId+"/Create/Assessment/"+params.assName+"/Add"}>
+                          <Link to={"/Admin/Report/"+params.corpId+"/"+params.campId+"/Create/Assessment/"+params.assName+"/Add/1001"}>
                               <FloatingActionButton mini={true} secondary={true} style={style}>
                                   <ContentAdd/>
                               </FloatingActionButton>

@@ -155,7 +155,7 @@ export var AdminAdd = React.createClass({
                             <div className="form-group">
                                 <AutoComplete errorText={fieldErrors.roles
                                     ? fieldErrors.roles
-                                    : ""} searchText={admin.roleName} floatingLabelText="Roles" filter={AutoComplete.noFilter} openOnFocus={true} dataSource={roles} fullWidth={true} onNewRequest={(val, obj) => dispatch({type: "HANDLE_CHANGE", property: "roleName", value: val, isRequired: true, pattern: ""})}/>
+                                    : ""} searchText={admin.roleName} floatingLabelText="Roles" filter={AutoComplete.noFilter} openOnFocus={true} dataSource={rolesForAdmin} fullWidth={true} onNewRequest={(val, obj) => dispatch({type: "HANDLE_CHANGE", property: "roleName", value: val, isRequired: true, pattern: ""})}/>
                             </div>
                             <div className="form-group">
                                 <DatePicker errorText={fieldErrors.dateOfBirth

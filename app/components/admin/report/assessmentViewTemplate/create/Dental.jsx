@@ -44,149 +44,49 @@ export var Dental = React.createClass({
             element[0].style.backgroundColor = ""
         }
     },
+    handleChange(e, name, isRequired, pattern) {
+        // let {dispatch} = this.props;
+        // dispatch({type: "HANDLE_CHANGE", property: name, value: e.target.value, isRequired: isRequired, pattern: pattern});
+    },
     render() {
+        let {questions, dispatch} = this.props;
+        let renderBody = function() {
+            if (!questions) {
+                return (
+                    <tr>
+                        <td className="text-center" colSpan="8">No questions availble data</td>
+                    </tr>
+                );
+            }
+
+            return questions.map((question, index) => {
+                return (question.question == "Tooth Status"
+                    ? ""
+                    : <tr key={index}>
+                        <td>
+                            <strong>{question.question == "Tooth Status"
+                                    ? ""
+                                    : question.question}</strong>
+                        </td>
+                        <td>{displayFormField(question)}</td>
+                    </tr>);
+            })
+        };
+        let displayFormField = function(formData) {
+            switch (formData.questionType) {
+                case "FreeText-String":
+                    return (<TextField errorText={""} fullWidth={true} value="" id={formData.id} onChange={(e) => this.handleChange(e, "firstName", true, "")}/>);
+                    break;
+                default:
+            }
+        };
         return (
             <div>
                 <h2 className="bg-primary">Dental Detail</h2>
 
                 <table className="table table-bordered text-left">
                     <tbody>
-                        <tr>
-                            <th>
-                                Mouth Hygiene
-                            </th>
-                            <td>
-                                <input type="text" className="form-control"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                Condition Of Gum
-                            </th>
-                            <td>
-                                <input type="text" className="form-control"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                Does the Employee have any Bad Breathe?
-                            </th>
-                            <td>
-                                <label className="radio-inline">
-                                    <input type="radio" name="inlineRadioOptions" value="Yes"/>
-                                    Yes
-                                </label>
-                                <label className="radio-inline">
-                                    <input type="radio" name="inlineRadioOptions" value="No"/>
-                                    No
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                Is the student using dental braises?
-                            </th>
-                            <td>
-                                <label className="radio-inline">
-                                    <input type="radio" name="inlineRadioOptions" value="Yes"/>
-                                    Yes
-                                </label>
-                                <label className="radio-inline">
-                                    <input type="radio" name="inlineRadioOptions" value="No"/>
-                                    No
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                Does the Employee have any Bleeding gums?
-                            </th>
-                            <td>
-                                <label className="radio-inline">
-                                    <input type="radio" name="inlineRadioOptions" value="Yes"/>
-                                    Yes
-                                </label>
-                                <label className="radio-inline">
-                                    <input type="radio" name="inlineRadioOptions" value="No"/>
-                                    No
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                Does the Employee have any Sensitivity problem?
-                            </th>
-                            <td>
-                                <label className="radio-inline">
-                                    <input type="radio" name="inlineRadioOptions" value="Yes"/>
-                                    Yes
-                                </label>
-                                <label className="radio-inline">
-                                    <input type="radio" name="inlineRadioOptions" value="No"/>
-                                    No
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                Does the Employee have any Discoloured or Yellowish teeth?
-                            </th>
-                            <td>
-                                <label className="radio-inline">
-                                    <input type="radio" name="inlineRadioOptions" value="Yes"/>
-                                    Yes
-                                </label>
-                                <label className="radio-inline">
-                                    <input type="radio" name="inlineRadioOptions" value="No"/>
-                                    No
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                Does the Employee have Smoking habit?
-                            </th>
-                            <td>
-                                <label className="radio-inline">
-                                    <input type="radio" name="inlineRadioOptions" value="Yes"/>
-                                    Yes
-                                </label>
-                                <label className="radio-inline">
-                                    <input type="radio" name="inlineRadioOptions" value="No"/>
-                                    No
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                Does the Employee use any Mouth wash?
-                            </th>
-                            <td>
-                                <label className="radio-inline">
-                                    <input type="radio" name="inlineRadioOptions" value="Yes"/>
-                                    Yes
-                                </label>
-                                <label className="radio-inline">
-                                    <input type="radio" name="inlineRadioOptions" value="No"/>
-                                    No
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                Any RefeCaries Toothist?
-                            </th>
-                            <td>
-                                <label className="radio-inline">
-                                    <input type="radio" name="inlineRadioOptions" value="Yes"/>
-                                    Yes
-                                </label>
-                                <label className="radio-inline">
-                                    <input type="radio" name="inlineRadioOptions" value="No"/>
-                                    No
-                                </label>
-                            </td>
-                        </tr>
+                        {renderBody()}
                     </tbody>
                 </table>
 
@@ -304,4 +204,6 @@ export var Dental = React.createClass({
     }
 });
 
-export default Redux.connect()(Dental);
+export default Redux.connect((state) => {
+    return {questions: state.report.questions}
+})(Dental);

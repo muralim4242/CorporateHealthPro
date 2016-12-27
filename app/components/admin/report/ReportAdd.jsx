@@ -16,6 +16,7 @@ import CoporateHealthProAPI from 'CoporateHealthProAPI';
 
 export var ReportAdd = React.createClass({
     componentDidMount: function() {
+        let {dispatch}=this.props;
         let {assName} = this.props.params;
         let assId = 1;
         switch (assName) {
@@ -30,7 +31,7 @@ export var ReportAdd = React.createClass({
                 break;
         }
         CoporateHealthProAPI.getAssessmentQuestions(assId).then(function(response) {
-              
+              dispatch({type:"SET_QUESTIONS",questions:response});
         //    console.log(response);
         }, function(err) {
             alert(err);

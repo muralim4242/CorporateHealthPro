@@ -132,7 +132,8 @@ export var campReducer = (state = {
 export var reportReducer = (state = {
     companySelected: {},
     campSelected: {},
-    campList: []
+    campList: [],
+    questions: []
 }, action) => {
     switch (action.type) {
         case 'SET_CAMP_LIST':
@@ -146,6 +147,10 @@ export var reportReducer = (state = {
         case 'SET_SELECTED_CAMP':
             //return {campSelected: action.campSelected};
             return Object.assign({}, state, {campSelected: action.campSelected});
+            break;
+        case "SET_QUESTIONS":
+            return {...state,
+              ["questions"]: action.questions}
             break;
 
         default:
@@ -260,21 +265,25 @@ function validate(isRequired, pattern, name, value, validationData) {
     let errorText = "";
     if (isRequired) {
         if (value.length || value) {
-            if (_.indexOf(validationData.required.current,name)==-1) {
+            if (_.indexOf(validationData.required.current, name) == -1) {
                 validationData.required.current.push(name);
             }
         } else {
-            validationData.required.current=_.remove(validationData.required.current,(item)=>{return item!=name});
+            validationData.required.current = _.remove(validationData.required.current, (item) => {
+                return item != name
+            });
             errorText = "This is field is required";
         }
     }
     if (pattern.toString().length > 0) {
         if (pattern.test(value)) {
-            if (_.indexOf(validationData.pattern.current,name)==-1) {
+            if (_.indexOf(validationData.pattern.current, name) == -1) {
                 validationData.pattern.current.push(name);
             }
         } else {
-            validationData.pattern.current=_.remove(validationData.pattern.current,(item)=>{return item!=name});
+            validationData.pattern.current = _.remove(validationData.pattern.current, (item) => {
+                return item != name
+            });
             errorText = "Invalid field data";
         }
     }

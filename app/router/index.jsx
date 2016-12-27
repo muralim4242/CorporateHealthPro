@@ -104,7 +104,7 @@ export default(
                     <Route path="/Admin/Report/:corpId/:campId/View/ReportTypeCheck/:type/Assessment/:assName/ConsView" component={ReportConsolidatedView}/>
                     <Route path="/Admin/Report/:corpId/:campId/Create/Assessment" component={Assessment}/>
                     <Route path="/Admin/Report/:corpId/:campId/Create/Assessment/:assName/List" component={ReportCreateList}/>
-                    <Route path="/Admin/Report/:corpId/:campId/Create/Assessment/:assName/Add" component={ReportAdd}/>
+                    <Route path="/Admin/Report/:corpId/:campId/Create/Assessment/:assName/Add/:id" component={ReportAdd}/>
                 </Route>
                 <Route path="/Admin/Profile" component={Profile}/>
                 <IndexRoute component={Dashboard}/>
